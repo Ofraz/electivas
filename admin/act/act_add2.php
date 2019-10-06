@@ -9,10 +9,10 @@
     
     $query = "UPDATE activid
     SET name_act ='$name',
-    description='$last',
+    description ='$last',
     cupo = '$cupo',
     cred_act = '$cred'
-    WHERE id_act = '$id' ";
+    WHERE id_act = '$id'";
 
     $result = mysqli_query($con, $query);
     if(!$result){
