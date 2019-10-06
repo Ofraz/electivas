@@ -76,7 +76,9 @@
             </div>
             <div class="col-12 col-md-12 col-xl-10 mx-auto p-3">
                 <div class="card">
-                    <div class="card-header"><H4>INTERMEDIARIOS</H4></div>
+                    <div class="card-header">
+                        <H4>INTERMEDIARIOS</H4>
+                    </div>
                     <div class="card-body">
                         <!-- Modal Agregar -->
                         <div class="modal fade" id="alta" tabindex="-1" role="dialog"
@@ -92,16 +94,17 @@
                                     <div class="modal-body">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
-                                            <label for="user_e">No. Trabajador</label>
-                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control">
+                                            <label for="user_a">No. Trabajador</label>
+                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="name_e">Nombre</label>
-                                            <input type="text" id="name_e" placeholder="Nombre" class="form-control">
+                                            <label for="name_a">Nombre</label>
+                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="last_ne">Apellidos</label>
-                                            <input type="text" id="last_ne" placeholder="Apellidos" class="form-control">
+                                            <label for="last_n">Apellidos</label>
+                                            <input type="text" id="last_na" placeholder="Apellidos"
+                                                class="form-control">
                                         </div>
                                     </div>
 
@@ -137,7 +140,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Apellidos</label>
-                                            <input type="text" id="last_ne" placeholder="Apellidos" class="form-control">
+                                            <input type="text" id="last_ne" placeholder="Apellidos"
+                                                class="form-control">
                                         </div>
                                     </div>
 

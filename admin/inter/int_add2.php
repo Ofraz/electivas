@@ -5,7 +5,6 @@
     $name = $_POST['name'];
     $last = $_POST['last'];
     $user = $_POST['user'];
-    $cupo = $_POST['cupo'];
     
     $query = "UPDATE inter
     SET name_inter ='$name',
