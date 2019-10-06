@@ -17,7 +17,6 @@
     <link rel="icon" href="../../visual/upiicsa.bmp" type="image/bmp">
     <link rel="stylesheet" href="../../css/Style.css">
     <link rel="stylesheet" href="../../componentes/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../../componentes/alertifyjs/css/alertify.css">
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <!--bootswatch litera -->
 </head>
@@ -31,7 +30,7 @@
             <span class="icon-bar middle-bar"></span>
             <span class="icon-bar bottom-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Electivas UPIICSA</a>
+        <a class="navbar-brand" href="../home_admin.php">Electivas UPIICSA</a>
 
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -44,10 +43,10 @@
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../act/home_act.php">Electivas</a>
+                    <a class="nav-link" href="../act/actividades.php">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../alu/home_alu.php">Alumnos</a>
+                    <a class="nav-link" href="#">Alumnos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../inter/home_int.php">Intermediarios</a>
@@ -76,6 +75,7 @@
             </div>
             <div class="col-12 col-md-12 col-xl-10 mx-auto p-3">
                 <div class="card">
+                <div class="card-header"><H4>ALUMNOS</H4></div>
                     <div class="card-body">
                         <!-- Modal Agregar -->
                         <div class="modal fade" id="alta" tabindex="-1" role="dialog"
@@ -83,18 +83,34 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header bg-upiicsa">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Agregar Actividad</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">AGREGAR ALUMNO</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <input type="hidden" id="Id">
+                                        <div class="form-group">
+                                            <label for="user_a">Boleta</label>
+                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name_e">Nombre</label>
+                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last_ne">Apellidos</label>
+                                            <input type="text" id="last_na" placeholder="Apellidos" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last_ne">Creditos</label>
+                                            <input type="text" id="cred_a" placeholder="creditos" class="form-control">
+                                        </div>                                        
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cancelar</button>
-                                        <button type="button" id="save_a" class="btn btn-primary">Guardar</button>
+                                        <button type="button" id="save" class="btn btn-primary">Crear</button>
                                     </div>
                                 </div>
                             </div>

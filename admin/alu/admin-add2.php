@@ -4,8 +4,8 @@
     $id = $_POST['id'];
     $name = $_POST['name'];
     $last = $_POST['last'];
-    $cred = $_POST['cred'];
     $user = $_POST['user'];
+    $cred = $_POST['cred'];
     
     $query = "UPDATE alu
     SET name_a ='$name',
@@ -16,7 +16,7 @@
 
     $result = mysqli_query($con, $query);
     if(!$result){
-        die('Error de consulta'. mysqli_error($con)); 
+        die('Error al actualizar la información!'. mysqli_error($con)); 
     }
-    echo"updated!";
+    echo"Datos actualizados correctamente!";
 ?>
