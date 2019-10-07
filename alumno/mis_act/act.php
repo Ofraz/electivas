@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include ('../connect.php');
+    include ('../../connect.php');
 
     $query  = "SELECT * FROM alu WHERE Boleta = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
@@ -66,17 +66,32 @@
             <div class="col-xl-10 mx-auto ">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="wlc">Bienvenido <?php echo $row['name']; ?></h3>
+                        <h3 class="wlc">Bienvenido <?php echo $row['name_a']; ?></h3>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-12 col-xl-10 mx-auto p-3">
                 <div class="card">
+                    <div class="card-header">
+                        <H4>ELECTIVAS DISPONIBLES</H4>
+                    </div>
                     <div class="card-body">
-                        <h4>Nombre: <?php echo $row['name_a']; ?></h4>
-                        <h4>Pellidos: <?php echo $row['ap_a']; ?></h4>
-                        <h4>Boleta: <?php echo $row['boleta']; ?></h4>
-                        <h4>Creditos : <?php echo $row['cred']; ?></h4>
+                        <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar">
+                        <div class="table-responsive">
+                            <table class="table table-sm my-4">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripcion</th>
+                                        <th>Cupo</th>
+                                        <th>Creditos</th>
+                                        <th>Responsable</th>
+                                        <th>inscribir</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="datos"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
