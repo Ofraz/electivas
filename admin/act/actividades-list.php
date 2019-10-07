@@ -10,7 +10,8 @@
     OR activid.description NOT LIKE ''
     OR activid.cupo NOT LIKE ''
     OR activid.cred_act NOT LIKE ''
-    OR concat(inter.name_inter,' ',inter.ap_inter) NOT LIKE ''";
+    OR inter.name_inter NOT LIKE ''
+    OR inter.ap_inter NOT LIKE ''";
     $result = mysqli_query($con, $query);
 
     if(!$result) {

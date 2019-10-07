@@ -17,7 +17,6 @@
     <link rel="icon" href="../visual/upiicsa.bmp" type="image/bmp">
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../componentes/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../componentes/alertifyjs/css/alertify.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!--bootswatch litera -->
 </head>
@@ -44,13 +43,13 @@
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../alu/home_a.php">Actividades</a>
+                    <a class="nav-link" href="mis_act/act.php">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../inter/home_int.php">Historial</a>
+                    <a class="nav-link" href="electivas/elec.php">Mis actividades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../vali/home_v.php">Validaciones</a>
+                    <a class="nav-link" href="validacionas/home_v.php">Validaciones</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../logout.php">Cerrar Sesión</a>
@@ -85,7 +84,7 @@
     </div>
 
     <script src="../componentes/jquery-3.4.1.min.js"></script>
-    <script src="alu.js"></script>
+    <script src="alumno.js"></script>
     <script src="../componentes/bootstrap/js/bootstrap.js"></script>
 
 </body>
