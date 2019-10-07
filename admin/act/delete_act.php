@@ -8,6 +8,7 @@
         if(!$result) {
             die('Error de Consulta'.mysqli_error($con));
         }
+        $res = "ALTER TABLE activid AUTO_INCREMENT = 1";
         echo "Actividad Eliminada";
     }  
 ?>

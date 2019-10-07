@@ -15,7 +15,8 @@
             'name_act'=>$row['name_act'],
             'description'=>$row['description'],
             'cupo'=>$row['cupo'],
-            'cred_act'=>$row['cred_act']                                   
+            'cred_act'=>$row['cred_act'],
+            'id_inter' =>$row['id_inter']                                   
             );
         }
         $jsonstring = json_encode($json[0]);

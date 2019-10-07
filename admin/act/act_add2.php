@@ -6,12 +6,14 @@
     $last = $_POST['last'];
     $cred = $_POST['cred'];
     $cupo = $_POST['cupo'];
+    $id_inter = $_POST['id_inter'];
     
     $query = "UPDATE activid
     SET name_act ='$name',
     description ='$last',
     cupo = '$cupo',
-    cred_act = '$cred'
+    cred_act = '$cred',
+    id_inter = '$id_inter'
     WHERE id_act = '$id'";
 
     $result = mysqli_query($con, $query);

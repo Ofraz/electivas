@@ -13,11 +13,11 @@ jQuery(function () {
                     search
                 },
                 success: function (response) {
-                    //console.log(response);
+                    console.log(response);
                     let busca = JSON.parse(response);
                     let template = '';
                     if (busca == 0) {
-                        template += `<tr><td colspan="4">SIN COINCIDENCIAS</td></tr>`;
+                        template += `<tr><td colspan="8"><h5 align="center">**** SIN COINCIDENCIAS ****</h5></td></tr>`;
                         $('#datos').html(template);
                     } else {
                         busca.forEach(busc => {
@@ -27,6 +27,7 @@ jQuery(function () {
                                 <td>${busc.description}</td>
                                 <td>${busc.cupo}</td>
                                 <td>${busc.cred_act}</td>
+                                <th>${busc.id_inter}</th>
                                 <td><button class="edit_a btn btn-warning" data-toggle="modal" data-target="#editar">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </button></td>
@@ -50,7 +51,7 @@ jQuery(function () {
             type: 'GET',
             success: function (response) {
                 let busca = JSON.parse(response);
-                //console.log(response);
+                console.log(response);
                 let template = '';
                 busca.forEach(busc => {
                     template += `<tr id_act="${busc.id_act}">
@@ -59,6 +60,7 @@ jQuery(function () {
                         <td>${busc.description}</td>
                         <td>${busc.cupo}</td>
                         <td>${busc.cred_act}</td>
+                        <th>${busc.id_inter}</th>
                         <td><button class="edit_a btn btn-warning" data-toggle="modal" data-target="#editar">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </button></td>
@@ -99,6 +101,7 @@ jQuery(function () {
             $('#last_ne').val(valor.description);
             $('#cupo').val(valor.cupo);
             $('#cred_e').val(valor.cred_act);
+           // $('#intere_name').val(valor.id_inter);
             $('#Id').val(valor.id_act);
         })
     })
@@ -110,6 +113,7 @@ jQuery(function () {
             last: $('#last_ne').val(),
             cupo: $('#cupo').val(),
             cred: $('#cred_e').val(),
+            id_inter: $('#intere_name').val(),
             id: $('#Id').val()
         };
         console.log(postData);
@@ -117,6 +121,7 @@ jQuery(function () {
             console.log(response);
             alert(response);
             fetchAct();
+            $("#intere_name").val('');
             $('#editar').modal('hide');
         });
     })
@@ -128,15 +133,17 @@ jQuery(function () {
             last: $('#last_na').val(),
             cupo: $('#cupo_a').val(),
             cred: $('#cred_a').val(),
-        };
+            id_inter: $('#intera_name').val()
+        };console.log(postData);
         $.post('act_add3.php', postData, function (response) {
-            //console.log(response);
+            console.log(response);
             alert(response);
             fetchAct();
             $('#name_a').val('');
             $('#last_na').val('');
             $('#cupo_a').val('');
             $('#cred_a').val('');
+            $("#intera_name").val('');
             $('#alta').modal('hide');
         });
     })

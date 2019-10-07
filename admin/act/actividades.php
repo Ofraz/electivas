@@ -110,6 +110,26 @@
                                             <label for="last_na">Créditos</label>
                                             <input type="text" id="cred_a" placeholder="creditos" class="form-control">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="intera_name">Responsable</label>                     
+                                                <select class="form-control" id="intera_name" required>
+                                                    <option value="">Seleccione Responsable</option>
+
+                                                    <?php $query = "SELECT id_inter, concat(name_inter,' ',ap_inter) AS intermediario FROM inter";
+                                                        $result = mysqli_query($con,$query);
+                                                        while($row = mysqli_fetch_array($result)){
+                                                            $id_inter = $row['id_inter'];
+                                                            $name_inter = $row['intermediario'];
+                                                            
+                                                    ?>
+                                                        <option value="<?php echo $id_inter; ?>">
+                                                            <?php echo $name_inter?>
+                                                        </option>
+                                                        <?php
+                                                        }
+                                                        ?>                                                    
+                                                </select>
+                                        </div>
                                     </div>
 
                                     <div class="modal-footer">
@@ -155,6 +175,26 @@
                                                 <input type="text" id="cred_e" placeholder="creditos"
                                                     class="form-control">
                                             </div>
+                                            <div class="form-group">
+                                            <label for="intere_name">Responsable</label>                     
+                                                <select class="form-control" id="intere_name" required>
+                                                    <option value="">Seleccione Responsable</option>
+
+                                                    <?php $query = "SELECT id_inter, concat(name_inter,' ',ap_inter) AS intermediario FROM inter";
+                                                        $result = mysqli_query($con,$query);
+                                                        while($row = mysqli_fetch_array($result)){
+                                                            $id_inter = $row['id_inter'];
+                                                            $name_inter = $row['intermediario'];
+                                                            
+                                                    ?>
+                                                        <option value="<?php echo $id_inter; ?>">
+                                                            <?php echo $name_inter?>
+                                                        </option>
+                                                        <?php
+                                                        }
+                                                        ?>                                                    
+                                                </select>
+                                        </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
@@ -180,6 +220,7 @@
                                         <th>Descripcion</th>
                                         <th>Cupo</th>
                                         <th>Creditos</th>
+                                        <th>Responsable</th>
                                         <th>Editar</th>
                                         <th>Borrar</th>
                                     </tr>

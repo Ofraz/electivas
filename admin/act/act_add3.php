@@ -5,9 +5,10 @@
     $last = $_POST['last'];
     $cred = $_POST['cred'];
     $cupo = $_POST['cupo'];
-    
-    $query = "INSERT INTO activid (name_act,description,cupo,cred_act)
-    VALUES ('$name', '$last', '$cupo','$cred')";
+    $id_inter = $_POST['id_inter'];
+
+    $query = "INSERT INTO activid (name_act, description, cupo, cred_act, id_inter)
+    VALUES ('$name', '$last', '$cupo','$cred', '$id_inter')";
 
     $result = mysqli_query($con, $query);
     if(!$result){
