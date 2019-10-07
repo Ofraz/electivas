@@ -133,7 +133,7 @@
         </div>
     </form>
     <script src="componentes/jquery-3.4.1.min.js"></script>
-    <script src="componentes/bootstrap/bootstrap.js"></script>
+    <script src="componentes/bootstrap/js/bootstrap.js"></script>
 
 </body>
 
