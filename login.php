@@ -64,8 +64,11 @@
             $row = mysqli_fetch_array($result);
             if ($row > 0){
                 $_SESSION["user_id"] = $row["id_admin"];
-                $home_url = 'admin/home_admin.php';
-                header('Location: '. $home_url);
+            ?>
+                <script type="text/javascript">
+                    window.location.href = 'admin/home_admin.php';
+                </script>
+            <?php
             }else{
 
             //INTERMEDIARIO
@@ -74,8 +77,11 @@
             $row = mysqli_fetch_array($result);
             if ($row > 0){
                 $_SESSION["user_id"] = $row["id_inter"];
-                $home_url = 'inter/home_i.php';
-                header('Location: '. $home_url);
+            ?>
+                <script type="text/javascript">
+                    window.location.href = 'inter/home_i.php';
+                </script>
+            <?php
             }else{
             
             //ALUMNO
@@ -84,8 +90,11 @@
             $row = mysqli_fetch_array($result);
             if ($row > 0){
                 $_SESSION["user_id"] = $row["boleta"];
-                $home_url = 'alumno/home_u.php';
-                    header('Location: '. $home_url);
+               ?>
+                <script type="text/javascript">
+                    window.location.href = 'alumno/home_u.php';
+                </script>
+            <?php
             }else {
                     $error = "Usuario o Contraseña Incorrectos";
         
