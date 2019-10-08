@@ -77,7 +77,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>Nombre: <?php echo $row['name']; ?></h4>
-                        <h4>Pellidos: <?php echo $row['ap']; ?></h4>
+                        <h4>Apellidos: <?php echo $row['ap']; ?></h4>
                         <h4>No. Trabajador: <?php echo $row['id_admin']; ?></h4>
                     </div>
                 </div>
