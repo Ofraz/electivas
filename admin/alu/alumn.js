@@ -113,6 +113,7 @@ jQuery(function () {
             //console.log(response);
             alert(response);
             fetchUsers();
+            $('#editar').modal('hide');
         });
     })
     //AGREGAR NUEVO USUARIO 

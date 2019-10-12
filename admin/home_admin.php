@@ -79,14 +79,47 @@
                         <h4>Nombre: <?php echo $row['name']; ?></h4>
                         <h4>Apellidos: <?php echo $row['ap']; ?></h4>
                         <h4>No. Trabajador: <?php echo $row['id_admin']; ?></h4>
+                        <button type="button" id="edit_user" class="save_e btn btn-primary">Editar mis datos</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal Agregar -->
+    <div class="modal fade" id="edit_user" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-upiicsa">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">CREAR ACTIVIDAD </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" id="Id">
+                                        <div class="form-group">
+                                            <label for="name_a">Nombre</label>
+                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last_na">Apellidos</label>
+                                            <input type="text" id="last_na" placeholder="Descripcion"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" id="save" class="save btn btn-primary">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
     <script src="../componentes/jquery-3.4.1.min.js"></script>
-    <script src="alu/admin.js"></script>
     <script src="../componentes/bootstrap/js/bootstrap.js"></script>
 
 </body>

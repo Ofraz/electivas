@@ -93,13 +93,13 @@ jQuery(function () {
         let id = $(element).attr('id_act');
         //console.log(id);
         $.post('act_add.php', {id}, function (response) {
-            //console.log(response);
+            console.log(response);
             const valor = JSON.parse(response);
             $('#name_e').val(valor.name_act);
             $('#last_ne').val(valor.description);
             $('#cupo').val(valor.cupo);
             $('#cred_e').val(valor.cred_act);
-           // $('#intere_name').val(valor.id_inter);
+            $('#intere_name').val(valor.id_inter); //investigar el motivo por el cuál no captura de forma correcta a veces
             $('#Id').val(valor.id_act);
         })
     })
