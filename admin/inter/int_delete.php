@@ -6,7 +6,7 @@
         $query = "DELETE FROM inter WHERE id_inter = '$id'";
         $result = mysqli_query($con, $query);
         if(!$result) {
-            die('Error de Consulta');
+            die('Error de Consulta'.mysqli_error($con));
         }
         echo "Actividad Eliminada";
     }  

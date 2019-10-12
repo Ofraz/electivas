@@ -122,7 +122,7 @@
                             <div metod="POST" class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header bg-upiicsa">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Modificar </h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">MODIFICAR DATOS DE ALUMNO </h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -182,7 +182,7 @@
     </div>
 
     <script src="../../componentes/jquery-3.4.1.min.js"></script>
-    <script src="admin.js"></script>
+    <script src="alumn.js"></script>
     <script src="../../componentes/bootstrap/js/bootstrap.js"></script>
 
 </body>

@@ -15,7 +15,7 @@ jQuery(function () {
                     let busca = JSON.parse(response);
                     let template = '';
                     if (busca == 0) {
-                        template += `<tr><td colspan="4">SIN COINCIDENCIAS</td></tr>`;
+                        template += `<tr><td colspan="4"><h5 align="center">**** SIN COINCIDENCIAS ****</h5></td></tr>`;
                         $('#datos').html(template);
                     } else {
                         busca.forEach(busc => {
