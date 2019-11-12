@@ -1,9 +1,9 @@
 <?php
     include('../../connect.php');
 
-    $query = "SELECT * FROM inter WHERE id_inter NOT LIKE ''
-    OR name_inter NOT LIKE ''
-    OR ap_inter NOT LIKE ''";
+    $query = "SELECT * FROM inter WHERE id_inter NOT LIKE '' AND id_inter !='0'
+    OR name_inter NOT LIKE '' AND name_inter !='SIN'
+    OR ap_inter NOT LIKE '' AND ap_inter !='ASIGNAR'";
     $result = mysqli_query($con, $query);
 
     if(!$result) {
