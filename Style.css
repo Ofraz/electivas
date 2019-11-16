@@ -1,0 +1,142 @@
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background: url("visual/whatsapp.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 3px;
+}
+
+thead th {
+  background-color: #448144;
+  border-color: black;
+  color: white;
+}
+
+tbody td {
+  background-color: white;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
+
+.icon-bar {
+	width: 22px; 
+	height: 2px;
+	background-color: white;
+	display: block;
+	transition: all 0.2s;
+	margin-top: 4px
+}
+ 
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+   
+  .navbar-toggler .middle-bar {
+    opacity: 0;
+  }
+   
+  .navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+   
+  .navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+  }
+   
+  .navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+  }
+   
+  .navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+  }
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+.btn-upiicsa {
+    color: #ffffff;
+    background-color: #448144;
+}
+
+.btn-rev-upiicsa{
+  color: #448144;
+  background-color: #ffffff;
+}
+
+.bg-upiicsa {
+    color: #ffffff;
+    background-color: #448144;
+}
+
+.bg-upiicsa-lg {
+    color: white;
+    background-color: black;
+}
+
+.erroremail , .errorpasswd{
+    position: absolute;
+    top: 0; left: 74%;
+    margin-top: 27.5%;
+    color: #ff3e3e;
+    margin-bottom: 17%;
+}
+
+
+.errorpasswd{
+    padding-top: 4%;
+}
+
+.erroremail , .errorpasswd{
+    position: absolute;
+    top: 0; left: 74%;
+    margin-top: 27.5%;
+    color: #ff3e3e;
+    margin-bottom: 17%;
+}
+
+.errorpasswd{
+    padding-top: 4%;
+}
+
+
+/*
+.wlc{
+    margin-top: 40%;
+    font-size: 1.4em;
+    color: #66afe9;
+    height: 20%;
+    background-color: gainsboro;
+}*/
+
+
+
+
+
+
+
+
