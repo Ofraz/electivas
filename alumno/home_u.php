@@ -43,10 +43,10 @@
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="mis_act/act.php">Electivas</a>
+                    <a class="nav-link" href="electivas/elec.php">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="electivas/elec.php">Mis actividades</a>
+                    <a class="nav-link" href="mis_act/act.php">Mis actividades</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="validacionas/home_v.php">Validaciones</a>
