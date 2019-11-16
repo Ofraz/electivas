@@ -73,7 +73,7 @@
             <div class="col-12 col-md-12 col-xl-10 mx-auto p-3">
                 <div class="card">
                     <div class="card-header">
-                        <H4>ELECTIVAS DISPONIBLES</H4>
+                        <H4>MIS ACTIVIDADES</H4>
                     </div>
                     <div class="card-body">
                         <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar">
