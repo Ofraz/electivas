@@ -18,7 +18,7 @@ jQuery(function () {
                     //console.log(busca);
                     let template = '';
                     if (busca == 0) {
-                        template += `<tr><td colspan="4"><h5 align="center">**** SIN COINCIDENCIAS ****</h5></td></tr>`;
+                        template += `<tr><td colspan="6"><h5 align="center">**** SIN COINCIDENCIAS ****</h5></td></tr>`;
                         $('#datos').html(template);
                     } else {
                         busca.forEach(busc => {
@@ -27,11 +27,11 @@ jQuery(function () {
                                 <td>${busc.name_a}</td>
                                 <td>${busc.ap_a}</td>
                                 <td>${busc.cred}</td>
-                                <td><button class="edit_a btn btn-warning" data-toggle="modal" data-target="#editar">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                    </button></td>
-                                <td><button class="delete_a btn btn-danger">
-                                    <span class="glyphicon glyphicon-remove"></span>
+                                <td><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
+                                    <span class="glyphicon glyphicon-pencil" style="warning"></span>
+                                </button></td>
+                                <td><button class="delete_a btn btn-outline-danger">
+                                    <span class="glyphicon glyphicon-remove" style="danger"></span>
                                 </button></td>
                             </tr>`
                         });
@@ -58,11 +58,11 @@ jQuery(function () {
                         <td>${busc.name_a}</td>
                         <td>${busc.ap_a}</td>
                         <td>${busc.cred}</td>
-                        <td><button class="edit_a btn btn-warning" data-toggle="modal" data-target="#editar">
-                            <span class="glyphicon glyphicon-pencil"></span>
+                        <td><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
+                            <span class="glyphicon glyphicon-pencil" style="warning"></span>
                         </button></td>
-                        <td><button class="delete_a btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span>
+                        <td><button class="delete_a btn btn-outline-danger">
+                            <span class="glyphicon glyphicon-remove" style="danger"></span>
                         </button></td>
                     </tr>`
                 });
