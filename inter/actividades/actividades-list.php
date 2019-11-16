@@ -23,6 +23,7 @@
     $json = array();
     while($row = mysqli_fetch_array($result)) {
         $json[] = array(
+            'id_act'=>$row['id_act'],
             'name_act'=>$row['name_act'],
             'description'=>$row['description'],
             'cupo'=>$row['cupo'],
