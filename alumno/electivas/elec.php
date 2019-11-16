@@ -43,10 +43,10 @@
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../electivas/elec.php">Electivas</a>
+                    <a class="nav-link" href="#">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis Actividades</a>
+                    <a class="nav-link" href="../mis_act/act.php">Mis Actividades</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../valiaciones/home_val.php">Validaciones</a>
@@ -99,7 +99,7 @@
     </div>
 
     <script src="../../componentes/jquery-3.4.1.min.js"></script>
-    <script src="../alumno.js"></script>
+    <script src="act.js"></script>
     <script src="../../componentes/bootstrap/js/bootstrap.js"></script>
 
 </body>
