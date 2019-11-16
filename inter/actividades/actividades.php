@@ -104,7 +104,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" id="save" class="save btn btn-primary">Crear</button>
+                                        <button type="button" id="save" class="save btn btn-primary">Guardar</button>
                                     </div>
                                 </div>
                             </div>
