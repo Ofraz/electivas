@@ -93,7 +93,7 @@
                                     <div class="modal-body">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
-                                            <label for="name_a">Nombre acividad</label>
+                                            <label for="name_a">Nombre actividad</label>
                                             <input type="text" id="name_a" placeholder="Nombre" class="form-control">
                                         </div>
                                         <div class="form-group">
