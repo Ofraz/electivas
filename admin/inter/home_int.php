@@ -17,7 +17,6 @@
     <link rel="icon" href="../../visual/upiicsa.bmp" type="image/bmp">
     <link rel="stylesheet" href="../../css/Style.css">
     <link rel="stylesheet" href="../../componentes/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../../componentes/alertifyjs/css/alertify.css">
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <!--bootswatch litera -->
 </head>
@@ -52,9 +51,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Intermediarios</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="../vali/home.php">Validaciones</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="../../logout.php">Cerrar Sesión</a>
                 </li>
@@ -155,8 +154,8 @@
                             </div>
                         </div>
 
-                        <div class="form p-2"><button class="btn btn-primary" data-toggle="modal" data-target="#alta">
-                                <span class="glyphicon glyphicon-plus"> Añadir</span>
+                        <div class="form p-2"><button class="btn btn-outline-primary" data-toggle="modal" data-target="#alta">Añadir
+                                <span class="glyphicon glyphicon-plus" style="primary"></span>
                             </button> </div>
                         <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar">
                         <div class="table-responsive">

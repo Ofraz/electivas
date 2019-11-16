@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Administrador - inicio</title>
+    <title>Administrador - Inicio</title>
     <link rel="icon" href="../visual/upiicsa.bmp" type="image/bmp">
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../componentes/bootstrap/css/bootstrap.css">
@@ -51,9 +51,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="inter/home_int.php">Intermediarios</a>
                 </li>
-                <li class="nav-item">
+               <!-- <li class="nav-item">
                     <a class="nav-link" href="vali/home_valid.php">Validaciones</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="../logout.php">Cerrar Sesión</a>
                 </li>
