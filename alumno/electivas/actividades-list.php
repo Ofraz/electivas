@@ -1,17 +1,15 @@
 <?php
-    include('../../connect.php');
+    session_start();
+    include ('../../connect.php');
 
-    $query = "SELECT activid.id_act, activid.name_act,activid.description,
-    activid.cupo, activid.cred_act, 
-    concat(inter.name_inter,' ',inter.ap_inter) AS intermed FROM activid 
-    INNER JOIN inter ON activid.id_inter = inter.id_inter 
-    WHERE activid.id_act NOT LIKE ''
-    OR activid.name_act NOT LIKE ''
-    OR activid.description NOT LIKE ''
-    OR activid.cupo NOT LIKE ''
-    OR activid.cred_act NOT LIKE ''
-    OR inter.name_inter NOT LIKE ''
-    OR inter.ap_inter NOT LIKE ''";
+    $query = "SELECT activid.id_act, activid.name_act, activid.description, activid.cupo, activid.cred_act, 
+    concat(inter.name_inter,' ',inter.ap_inter) AS intermed FROM activid
+    JOIN inter ON activid.id_inter = inter.id_inter 
+    WHERE activid.id_act NOT IN 
+    (SELECT alu_act.id_act FROM alu_act 
+    INNER JOIN alu ON alu_act.boleta  = alu.boleta 
+    WHERE alu.boleta = '$_SESSION[user_id]')";
+
     $result = mysqli_query($con, $query);
 
     if(!$result) {
