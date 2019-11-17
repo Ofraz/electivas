@@ -7,7 +7,7 @@ jQuery(function () {
         let search = $('#search').val();
         if (search != "") {
             $.ajax({
-                url: 'search_act.php',
+                url: 'actividades_search.php',
                 type: 'POST',
                 data: {search},
                 success: function (response) {
