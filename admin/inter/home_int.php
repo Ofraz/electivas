@@ -165,8 +165,8 @@
                                         <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
-                                        <th>Editar</th>
-                                        <th>Borrar</th>
+                                        <th style="text-align:center">Editar</th>
+                                        <th style="text-align:center">Borrar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="datos"></tbody>

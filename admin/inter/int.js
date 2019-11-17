@@ -23,10 +23,10 @@ jQuery(function () {
                                 <td>${busc.id_inter}</td>
                                 <td>${busc.name_inter}</td>
                                 <td>${busc.ap_inter}</td>
-                                <td><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
+                                <td align="center"><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
                                     <span class="glyphicon glyphicon-pencil" style="warning"></span>
                                 </button></td>
-                                <td><button class="delete_a btn btn-outline-danger">
+                                <td align="center"><button class="delete_a btn btn-outline-danger">
                                     <span class="glyphicon glyphicon-remove" style="danger"></span>
                                 </button></td>
                             </tr>`
@@ -53,10 +53,10 @@ jQuery(function () {
                         <td>${busc.id_inter}</td>
                         <td>${busc.name_inter}</td>
                         <td>${busc.ap_inter}</td>
-                        <td><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
+                        <td align="center"><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
                             <span class="glyphicon glyphicon-pencil" style="warning"></span>
                         </button></td>
-                        <td><button class="delete_a btn btn-outline-danger">
+                        <td align="center"><button class="delete_a btn btn-outline-danger">
                             <span class="glyphicon glyphicon-remove" style="danger"></span>
                         </button></td>
                     </tr>`

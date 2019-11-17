@@ -101,18 +101,19 @@
                                             <input type="text" id="last_na" placeholder="Descripcion"
                                                 class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="cupo_a">Cupo</label>
-                                            <input type="text" id="cupo_a" placeholder="creditos" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="last_na">Créditos</label>
-                                            <input type="text" id="cred_a" placeholder="creditos" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="intera_name">Responsable</label>                     
+                                        <div class="form-group row">
+                                            <div class="col-xl-3 col-md-5 col-sm-5">
+                                                <label for="cupo_a">Cupo</label>
+                                                <input type="text" id="cupo_a" placeholder="Cupo" class="form-control">
+                                            </div>
+                                            <div class="col-xl-3 col-md-5 col-sm-5">
+                                                <label for="last_na">Créditos</label>
+                                                <input type="text" id="cred_a" placeholder="Créditos" class="form-control">
+                                            </div>
+                                            <div class="col-xl-6 col-md-12 col-sm-12">
+                                                <label for="intera_name">Responsable</label>                     
                                                 <select class="form-control" id="intera_name" required>
-                                                    <option value="">Seleccione Responsable</option>
+                                                    <option value="">-- Responsable --</option>
 
                                                     <?php $query = "SELECT id_inter, concat(name_inter,' ',ap_inter) AS intermediario FROM inter";
                                                         $result = mysqli_query($con,$query);
@@ -128,6 +129,7 @@
                                                         }
                                                         ?>                                                    
                                                 </select>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -163,19 +165,18 @@
                                                 <label for="last_ne">Descripcion</label>
                                                 <input type="text" id="last_ne" placeholder="Descripcion"
                                                     class="form-control">
+                                            </div>                                            
+                                            <div class="form-group row">
+                                            <div class="col-xl-3 col-md-5 col-sm-5">
+                                                <label for="cupo_a">Cupo</label>
+                                                <input type="text" id="cupo" placeholder="Cupo" class="form-control">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="last_ne">Cupo</label>
-                                                <input type="text" id="cupo" placeholder="creditos"
-                                                    class="form-control">
+                                            <div class="col-xl-3 col-md-5 col-sm-5">
+                                                <label for="last_na">Créditos</label>
+                                                <input type="text" id="cred_e" placeholder="Créditos" class="form-control">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="last_ne">Creditos</label>
-                                                <input type="text" id="cred_e" placeholder="creditos"
-                                                    class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                            <label for="intere_name">Responsable</label>                     
+                                            <div class="col-xl-6 col-md-12 col-sm-12">
+                                                <label for="intera_name">Responsable</label>                     
                                                 <select class="form-control" id="intere_name" required>
                                                     <option value="">Seleccione Responsable</option>
 
@@ -183,8 +184,7 @@
                                                         $result = mysqli_query($con,$query);
                                                         while($row = mysqli_fetch_array($result)){
                                                             $id_inter = $row['id_inter'];
-                                                            $name_inter = $row['intermediario'];
-                                                            
+                                                            $name_inter = $row['intermediario'];                                     
                                                     ?>
                                                         <option value="<?php echo $id_inter; ?>">
                                                             <?php echo $name_inter?>
@@ -193,6 +193,7 @@
                                                         }
                                                         ?>                                                    
                                                 </select>
+                                            </div>
                                         </div>
                                         </form>
                                     </div>
@@ -220,8 +221,8 @@
                                         <th>Cupo</th>
                                         <th>Creditos</th>
                                         <th>Responsable</th>
-                                        <th>Editar</th>
-                                        <th>Borrar</th>
+                                        <th style="text-align:center">Editar</th>
+                                        <th style="text-align:center">Borrar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="datos"></tbody>

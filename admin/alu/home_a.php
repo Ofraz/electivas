@@ -168,8 +168,8 @@
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
                                         <th>Creditos</th>
-                                        <th>Editar</th>
-                                        <th>Borrar</th>
+                                        <th style="text-align:center">Editar</th>
+                                        <th style="text-align:center">Borrar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="datos"></tbody>
