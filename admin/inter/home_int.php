@@ -162,7 +162,7 @@
                             <table class="table table-sm my-4">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>Clave T.</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
                                         <th style="text-align:center">Editar</th>
