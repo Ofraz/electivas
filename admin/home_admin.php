@@ -78,8 +78,7 @@
                     <div class="card-body">
                         <h4>Nombre: <?php echo $row['name']; ?></h4>
                         <h4>Apellidos: <?php echo $row['ap']; ?></h4>
-                        <h4>No. Trabajador: <?php echo $row['id_admin']; ?></h4>
-                        <button type="button" id="edit_user" class="save_e btn btn-primary">Editar mis datos</button>
+                        <h4>Clave. T: <?php echo $row['id_admin']; ?></h4>
                     </div>
                 </div>
             </div>
