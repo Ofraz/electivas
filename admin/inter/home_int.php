@@ -43,7 +43,7 @@
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../act/actividades.php">Actividades</a>
+                    <a class="nav-link" href="../act/actividades.php">Electivas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../alu/home_a.php">Alumnos</a>
@@ -93,7 +93,7 @@
                                     <div class="modal-body">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
-                                            <label for="user_a">No. Trabajador</label>
+                                            <label for="user_a">Clave T.</label>
                                             <input type="text" id="user_a" placeholder="Usuario" class="form-control">
                                         </div>
                                         <div class="form-group">
@@ -130,7 +130,7 @@
                                     <div class="modal-body">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
-                                            <label for="user_e">No. Trabajador</label>
+                                            <label for="user_e">Clave T.</label>
                                             <input type="text" id="user_e" placeholder="Usuario" class="form-control">
                                         </div>
                                         <div class="form-group">
