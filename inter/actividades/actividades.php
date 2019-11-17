@@ -93,7 +93,7 @@
                                                             <th>Boleta</th>
                                                             <th>Nombre</th>
                                                             <th>Apellidos</th>
-                                                            <th>Asiste</th>
+                                                            <th align="center">Asistencia</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="dato"></tbody>

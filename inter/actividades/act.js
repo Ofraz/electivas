@@ -108,9 +108,11 @@ jQuery(function () {
                                     <td>${busc.boleta}</td>
                                     <td>${busc.name_a}</td>
                                     <td>${busc.ap_a}</td>
-                                    <td><button class="edit_a btn btn-outline-success" data-toggle="modal" data-target="#editar">
-                                        <span class="glyphicon glyphicon-new-window" style="success"></span>
-                                    </button></td>
+                                    <td align="center"><div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                        </div>
+                                    </div></td>
                                 </tr>`
                             });
                             $('#dato').html(template);
@@ -138,9 +140,11 @@ jQuery(function () {
                                 <td>${busc.boleta}</td>
                                 <td>${busc.name_a}</td>
                                 <td>${busc.ap_a}</td>
-                                <td><button class="edit_a btn btn-outline-success" data-toggle="modal" data-target="#editar">
-                                    <span class="glyphicon glyphicon-new-window" style="success"></span>
-                                </button></td>
+                                <td align="center"><div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                        </div>
+                                    </div></td>
                             </tr>`
                         });
                         $('#dato').html(template);
