@@ -25,6 +25,7 @@
                 'id_act' =>$row['id_act'],
                 'name_act'=>$row['name_act'],
                 'description'=>$row['description'],
+                'cupo'=>$row['cupo'],
                 'cred_act'=>$row['cred_act'],
                 'id_inter' =>$row['intermed']                                 
             );
