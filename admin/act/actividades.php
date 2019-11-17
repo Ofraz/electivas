@@ -215,7 +215,6 @@
                             <table class="table table-sm my-4">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Descripcion</th>
                                         <th>Cupo</th>

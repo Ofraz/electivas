@@ -20,7 +20,6 @@ jQuery(function () {
                     } else {
                         busca.forEach(busc => {
                             template += `<tr id_act="${busc.id_act}">
-                                <td>${busc.id_act}</td>
                                 <td>${busc.name_act}</td>
                                 <td>${busc.description}</td>
                                 <td>${busc.cupo}</td>
@@ -53,7 +52,6 @@ jQuery(function () {
                 let template = '';
                 busca.forEach(busc => {
                     template += `<tr id_act="${busc.id_act}">
-                        <td>${busc.id_act}</td>
                         <td>${busc.name_act}</td>
                         <td>${busc.description}</td>
                         <td>${busc.cupo}</td>
