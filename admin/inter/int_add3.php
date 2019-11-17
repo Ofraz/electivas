@@ -12,5 +12,5 @@
     if(!$result){
         die('Error al crear actividad!  '. mysqli_error($con)); 
     }
-    echo"Alumno registrado correctamente!";
+    echo"Intermediario registrado correctamente!";
 ?>
