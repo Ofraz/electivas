@@ -80,6 +80,7 @@ jQuery(function () {
                 id
             }, function (response) {
                 //console.log(response);
+                alert(response);
                 fetchUsers();
             })
         }
