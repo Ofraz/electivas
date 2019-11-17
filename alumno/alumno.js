@@ -46,7 +46,7 @@ jQuery(function () {
     //LISTA TIEMPO REAL
     function fetchUsers() {
         $.ajax({
-            url: 'admin-list.php',
+            url: 'actividades-list.php',
             type: 'GET',
             success: function (response) {
                 let busca = JSON.parse(response);

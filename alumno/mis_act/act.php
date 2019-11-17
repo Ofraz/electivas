@@ -99,7 +99,7 @@
     </div>
 
     <script src="../../componentes/jquery-3.4.1.min.js"></script>
-    <script src="../alumno.js"></script>
+    <script src="mis_act.js"></script>
     <script src="../../componentes/bootstrap/js/bootstrap.js"></script>
 
 </body>
