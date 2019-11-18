@@ -119,7 +119,7 @@
                                             title="Al menos 8 caracteres. 1 mayuscula, 1 letra, 1 numero y 1 caracter especial" required>
                 
                                         <label for="password">Confirmar Contraseña</label>
-                                        <input type="password" id="password_c" placeholder="Contraseña"
+                                        <input type="password" id="password_c" placeholder="Confirmar contraseña"
                                             class="form-control" required />
                                         <span id='message'></span>
                                     </div>

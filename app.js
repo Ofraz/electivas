@@ -3,6 +3,7 @@ jQuery(function(){
 
     //Registrarse
     $('#signup-form').submit(function(e){
+      console.log('enviando....');
         const postData= {
             tipo_usuario: document.getElementById("tipo_usuario").value, 
             user: $('#user').val(),
@@ -20,6 +21,7 @@ jQuery(function(){
         e.preventDefault();
     });
 
+    function passStrength(){
     $('#password').strength({
         strengthClass: 'strength',
     });
@@ -28,13 +30,14 @@ jQuery(function(){
   , password_c = document.getElementById("password_c");
 
 function validatePassword(){
-  if(password.value != password_c.value) {
-    password_c.setCustomValidity("Contraseñas no coinciden");
+  if(password.value == password_c.value) {
+    
   } else {
-    password_c.setCustomValidity('Contraseñas coinciden');
+    password_c.setCustomValidity('Contraseñas no coinciden');
   }
 }
 
 password.onchange = validatePassword;
-password_c.onkeyup = validatePassword;
+password_c.onkeyup = validatePassword;}
+
 })
