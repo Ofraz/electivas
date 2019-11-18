@@ -95,30 +95,33 @@
                                 <!-- -->
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
-                                    <input type="text" id="name" placeholder="Nombre" class="form-control" required />
+                                    <input type="text" id="name" placeholder="Nombre" 
+                                    class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="last_n">Apellidos</label>
-                                    <input type="text" id="last_n" placeholder="Apellidos" class="form-control"
-                                        required />
+                                    <input type="text" id="last_n" placeholder="Apellidos" 
+                                    class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                 </div>
 
                             </div>
                             <div class="col-12 col-md-12 col-xl-6">
                                 <div class="form-group">
                                     <label for="user">Usuario (Boleta/Num.Trabajador)</label>
-                                    <input type="text" id="user" placeholder="Usuario" class="form-control" required />
+                                    <input type="text" id="user" placeholder="Usuario" 
+                                    class="form-control" pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten caracteres especiales" required>
                                 </div>
                                 <form id="verifica">
                                     <div class="form-group">
                                         <label for="password">Contraseña</label>
                                         <input type="password" id="password" placeholder="Contraseña"
-                                            class="form-control" required />
-                                    </div>
-                                    <div class="form-group">
+                                            class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" 
+                                            title="Al menos 8 caracteres. 1 mayuscula, 1 letra, 1 numero y 1 caracter especial" required>
+                
                                         <label for="password">Confirmar Contraseña</label>
                                         <input type="password" id="password_c" placeholder="Contraseña"
                                             class="form-control" required />
+                                        <span id='message'></span>
                                     </div>
                                 </form>
                             </div>
@@ -134,7 +137,9 @@
 
     <script src="componentes/jquery-3.4.1.min.js"></script>
     <script src="componentes/bootstrap/js/bootstrap.js"></script>
+    <script src="componentes/strength.js"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>

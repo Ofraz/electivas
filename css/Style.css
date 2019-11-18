@@ -118,20 +118,19 @@ tr th:last-child {
     padding-top: 4%;
 }
 
+.veryweak{
+	color: #F04040!important
+}
+.weak{
+	color: #FF853C!important;
+}
+.medium{
+	color: #FC0!important;
+}
+.strong{
+	color: #448144!important;
+}
 
-/*
-.wlc{
-    margin-top: 40%;
-    font-size: 1.4em;
-    color: #66afe9;
-    height: 20%;
-    background-color: gainsboro;
-}*/
-
-
-
-
-
-
-
-
+input:valid {
+  border-color: green;
+}
