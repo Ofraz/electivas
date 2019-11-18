@@ -102,7 +102,7 @@ jQuery(function () {
     })
 
     //actualizar admin
-    $("#save_e").click(function (e) {
+    $("#editar_form").submit(function (e) {
         const postData = {
             user: $('#user_e').val(),
             name: $('#name_e').val(),
@@ -116,10 +116,11 @@ jQuery(function () {
             fetchUsers();
             $('#editar').modal('hide');
         });
+        e.preventDefault();
     })
     //AGREGAR NUEVO USUARIO 
-    $("#save").click(function (e) {
-        e.preventDefault();
+    $("#alta_form").submit(function (e) {
+        
         const postData = {
             user_a: $('#user_a').val(),
             name_a: $('#name_a').val(),
@@ -136,5 +137,6 @@ jQuery(function () {
             $('#cred_a').val('');
             $('#alta').modal('hide');
         });
+        e.preventDefault();
     })
 })

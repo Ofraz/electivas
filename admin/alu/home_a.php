@@ -89,29 +89,34 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <form method="post" id="alta_form">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_a">Boleta</label>
-                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control">
+                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control"
+                                            pattern="[0-9\s]+" title="Solo se admiten numeros" required> 
                                         </div>
                                         <div class="form-group">
                                             <label for="name_e">Nombre</label>
-                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control">
+                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control"
+                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Apellidos</label>
-                                            <input type="text" id="last_na" placeholder="Apellidos" class="form-control">
+                                            <input type="text" id="last_na" placeholder="Apellidos" class="form-control"
+                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Creditos</label>
-                                            <input type="text" id="cred_a" placeholder="creditos" class="form-control">
+                                            <input type="number" id="cred_a" placeholder="creditos" class="form-control" required>
                                         </div>                                        
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cancelar</button>
-                                        <button type="button" id="save" class="btn btn-primary">Crear</button>
+                                        <button type="submit" id="save" class="btn btn-primary">Crear</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -128,30 +133,35 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <form method="post" id="editar_form">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_e">Boleta</label>
-                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control">
+                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control"
+                                            pattern="[0-9\s]+" title="Solo se admiten números" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="name_e">Nombre</label>
-                                            <input type="text" id="name_e" placeholder="Nombre" class="form-control">
+                                            <input type="text" id="name_e" placeholder="Nombre" class="form-control"
+                                            class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Apellidos</label>
-                                            <input type="text" id="last_ne" placeholder="Apellidos" class="form-control">
+                                            <input type="text" id="last_ne" placeholder="Apellidos" class="form-control"
+                                            class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Creditos</label>
-                                            <input type="text" id="cred_e" placeholder="creditos" class="form-control">
+                                            <input type="number" id="cred_e" placeholder="creditos" class="form-control" required>
                                         </div>                                        
                                     </div>
                                         
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" id="save_e" class="save_e btn btn-primary">Salvar Cambios</button>
+                                        <button type="submit" id="save_e" class="save_e btn btn-primary">Salvar Cambios</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
