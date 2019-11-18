@@ -10,6 +10,6 @@
         if(!$result) {
             die('Error de Consulta'.mysqli_error($con));
         }
-        echo "Actividad Eliminada";
+        echo "Intermediario Eliminado";
     }  
 ?>
