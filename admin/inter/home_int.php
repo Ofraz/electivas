@@ -91,27 +91,31 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <form method="post" id="alta_form">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_a">Clave T.</label>
-                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control">
+                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control"
+                                            pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten caracteres especiales" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="name_a">Nombre</label>
-                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control">
+                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control"
+                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_n">Apellidos</label>
-                                            <input type="text" id="last_na" placeholder="Apellidos"
-                                                class="form-control">
+                                            <input type="text" id="last_na" placeholder="Apellidos" class="form-control"
+                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                         </div>
                                     </div>
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" id="save" class="save btn btn-primary">Crear</button>
+                                        <button type="submit" id="save" class="save btn btn-primary">Crear</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -128,28 +132,32 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <form method="post" id="editar_form">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_e">Clave T.</label>
-                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control">
+                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control"
+                                            pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten caracteres especiales" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="name_e">Nombre</label>
-                                            <input type="text" id="name_e" placeholder="Nombre" class="form-control">
+                                            <input type="text" id="name_e" placeholder="Nombre" class="form-control"
+                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Apellidos</label>
-                                            <input type="text" id="last_ne" placeholder="Apellidos"
-                                                class="form-control">
+                                            <input type="text" id="last_ne" placeholder="Apellidos" class="form-control"
+                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                         </div>
                                     </div>
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" id="save_e" class="save_e btn btn-primary">Salvar
+                                        <button type="submit" id="save_e" class="save_e btn btn-primary">Salvar
                                             Cambios</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

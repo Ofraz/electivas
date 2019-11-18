@@ -95,7 +95,7 @@ jQuery(function () {
     })
 
     //ACTUALIZAR DATOS FORMULARIO MODIFICADO
-    $("#save_e").click(function (e) {
+    $("#editar_form").submit(function (e) {
         const postData = {
             user: $('#user_e').val(),
             name: $('#name_e').val(),
@@ -108,10 +108,11 @@ jQuery(function () {
             fetchInter();
             $('#editar').modal('hide');
         });
+        e.preventDefault();
     })
 
     //AGREGAR DATOS
-    $("#save").click(function (e) {
+    $("#alta_form").submit(function (e) {
         const postData = {
             user: $('#user_a').val(),
             name: $('#name_a').val(),
@@ -126,5 +127,6 @@ jQuery(function () {
             $('#last_na').val('');
             $('#alta').modal('hide');
         });
+        e.preventDefault();
     })
 })
