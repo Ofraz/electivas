@@ -91,24 +91,24 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <form id="alta_form">
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="name_a">Nombre actividad</label>
-                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control">
+                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_na">Descripcion</label>
-                                            <input type="text" id="last_na" placeholder="Descripcion"
-                                                class="form-control">
+                                            <input type="text" id="last_na" placeholder="Descripcion" class="form-control" required>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="cupo_a">Cupo</label>
-                                                <input type="text" id="cupo_a" placeholder="Cupo" class="form-control">
+                                                <input type="number" id="cupo_a" placeholder="Cupo" class="form-control" required>
                                             </div>
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="last_na">Créditos</label>
-                                                <input type="text" id="cred_a" placeholder="Créditos" class="form-control">
+                                                <input type="number" id="cred_a" placeholder="Créditos" class="form-control" required>
                                             </div>
                                             <div class="col-xl-6 col-md-12 col-sm-12">
                                                 <label for="intera_name">Responsable</label>                     
@@ -136,10 +136,11 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" id="save" class="save btn btn-primary">Crear</button>
+                                        <button type="submit" id="save" class="btn btn-primary">Crear</button>
                                     </div>
-                                </div>
-                            </div>
+                                    </form>
+                                </div><!--fin modal content -->
+                            </div><!--fin modal dialog -->
                         </div>
 
                         <!-- Modal Editar -->
@@ -154,26 +155,24 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form method="post" id="editar">
+                                        <form method="post" id="editar_form">
                                             <div class="form-group">
                                                 <input type="hidden" id="Id">
                                                 <label for="name_e">Nombre</label>
-                                                <input type="text" id="name_e" placeholder="Nombre"
-                                                    class="form-control">
+                                                <input type="text" id="name_e" placeholder="Nombre" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="last_ne">Descripcion</label>
-                                                <input type="text" id="last_ne" placeholder="Descripcion"
-                                                    class="form-control">
+                                                <input type="text" id="last_ne" placeholder="Descripcion" required> 
                                             </div>                                            
                                             <div class="form-group row">
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="cupo_a">Cupo</label>
-                                                <input type="text" id="cupo" placeholder="Cupo" class="form-control">
+                                                <input type="number" id="cupo" placeholder="Cupo" class="form-control" required>
                                             </div>
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="last_na">Créditos</label>
-                                                <input type="text" id="cred_e" placeholder="Créditos" class="form-control">
+                                                <input type="number" id="cred_e" placeholder="Créditos" class="form-control" required>
                                             </div>
                                             <div class="col-xl-6 col-md-12 col-sm-12">
                                                 <label for="intera_name">Responsable</label>                     
@@ -195,14 +194,13 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" id="save_e" class="save_e btn btn-primary">Salvar
-                                            Cambios</button>
+                                        <button type="submit" id="save_e" class="save_e btn btn-primary">Salvar Cambios</button>
                                     </div>
+                                </form>    
                                 </div>
                             </div>
                         </div>
