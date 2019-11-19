@@ -86,9 +86,11 @@ jQuery(function () {
                                 <td>${busc.boleta}</td>
                                 <td>${busc.name_a}</td>
                                 <td>${busc.ap_a}</td>
-                                <td><button class="edit_a btn btn-outline-success" data-toggle="modal" data-target="#editar">
-                                    <span class="glyphicon glyphicon-new-window" style="success"></span>
-                                </button></td>
+                                <td align="center"><div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="check_list[]" value="${busc.boleta}">
+                                    </div>
+                                </div></td>
                             </tr>`
                         });
                         $('#dato').html(template);
@@ -112,10 +114,10 @@ jQuery(function () {
                                 <td>${busc.name_a}</td>
                                 <td>${busc.ap_a}</td>
                                 <td align="center"><div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                        </div>
-                                    </div></td>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="check_list[]" value="${busc.boleta}">
+                                    </div>
+                                </div></td>
                             </tr>`
                         });
                         $('#dato').html(template);
@@ -145,14 +147,50 @@ jQuery(function () {
                         <td>${busc.name_a}</td>
                         <td>${busc.ap_a}</td>
                         <td align="center"><div class="form-group">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                </div>
-                            </div></td>
+                            <div class="form-check">
+                                <input type="checkbox" name="check_list[]" value="${busc.boleta}">
+                            </div>
+                        </div></td>
                     </tr>`
                 });
                 $('#dato').html(template);
             }
         })
+    });
+
+    //pase de lista
+    $("#check_form").submit(function (e) {  
+
+    var checkboxes = document.getElementsByName('check_list[]');
+    var vals = "";
+    for (var i=0, n=checkboxes.length;i<n;i++) 
+    {
+        if (checkboxes[i].checked) 
+        {
+           vals += ", count_"+i+": "+checkboxes[i].value;
+            /*"count-"+= [i] +=": " +=vals += ","+checkboxes[i].value;
+            vals += ","+checkboxes[i].value;*/
+        }
+    }
+    if (vals) vals = vals.substring(1);
+
+    console.log(vals);
+    
+    
+
+        /*const postData = {
+            user: $('#user_e').val(),
+            name: $('#name_e').val(),
+            last: $('#last_ne').val(),
+            id: $('#Id').val()
+        };
+        $.post('int_add2.php', postData, function (response) {
+            //console.log(response);
+            alert(response);
+            fetchInter();
+            $('#editar').modal('hide');
+        });*/
+        e.preventDefault();
     })
+
 })

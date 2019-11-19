@@ -13,41 +13,90 @@
 
         switch ($tipo_usuario) {
             case 'ad':
-                    $query = "INSERT into admin (id_admin,password,name,ap)
-                    VALUES ('$user', '$password', '$name', '$last_n')";
-                    $result = mysqli_query($con,$query);
-                    $row = mysqli_fetch_array($result);
+                    $consult="SELECT * FROM admin WHERE id_admin ='$user' AND password = '0' ";
+                    $result1 = mysqli_query($con,$consult);
+                    $row1 = mysqli_fetch_array($result1);
 
-                    if(!$result){
-                       // die('error de consulta'.mysqli_error($con));
+                    if(!$result1){
+                        $query = "INSERT into admin (id_admin,password,name,ap)
+                        VALUES ('$user', '$password', '$name', '$last_n')";
+                        $result = mysqli_query($con,$query);
+                        $row = mysqli_fetch_array($result);
+                        echo $result;
+
+                        if(!$result){
+                          die('error de consulta'.mysqli_error($con));
+                        }
+                        $_SESSION["user_id"] = $row["id_admin"];
+                        $alert = 'Administrador agregado';
+                        echo $alert;
+                    }else{
+                        $query = "UPDATE admin SET name = '$name',
+                        ap = '$last_n', password = '$password' WHERE id_admin = '$user';";
+                        $result0 = mysqli_query($con,$query);
+                        $row = mysqli_fetch_array($result0);
+
+                        
+                        $_SESSION["user_id"] = $row["id_admin"];
+                        $alert0 = 'ACTUALIZADO';
+                        echo $alert0;
                     }
-                    $_SESSION["user_id"] = $row["id_admin"];
-                    $alert = 'Administrador agregado';
-                    echo $alert;
             break;
             case 'us':
-                    $query = "INSERT into alu (boleta,password,name_a,ap_a)
-                    VALUES ('$user', '$password', '$name', '$last_n')";
-                    $result = mysqli_query($con,$query);
-                    $row = mysqli_fetch_array($result);
-                    if(!$result){
-                       // die('error de consulta'.mysqli_error($con));
+                    $consult="SELECT * FROM alu WHERE boleta ='$user' AND password = '0' ";
+                    $result1 = mysqli_query($con,$consult);
+                    $row1 = mysqli_fetch_array($result1);
+
+                    if(!$result1){
+                        $query = "INSERT into alu (boleta,password,name_a,ap_a)
+                        VALUES ('$user', '$password', '$name', '$last_n')";
+                        $result = mysqli_query($con,$query);
+                        $row = mysqli_fetch_array($result);
+                        if(!$result){
+                        // die('error de consulta'.mysqli_error($con));
+                        }
+                        $_SESSION["user_id"] = $row["boleta"];
+                        $alert = 'Alumno agregado';
+                        echo $alert;
+                    }else{
+                        $query = "UPDATE alu SET name_a = '$name',
+                        ap_a = '$last_n', password = '$password' WHERE boleta = '$user';";
+                        $result0 = mysqli_query($con,$query);
+                        $row = mysqli_fetch_array($result0);
+
+                        
+                        $_SESSION["user_id"] = $row["id_admin"];
+                        $alert0 = 'ACTUALIZADO';
+                        echo $alert0;
                     }
-                    $_SESSION["user_id"] = $row["boleta"];
-                    $alert = 'Alumno agregado';
-                    echo $alert;
             break;
             case 'in':
-                    $query = "INSERT into inter (id_inter,password,name_inter,ap_inter)
-                    VALUES ('$user', '$password', '$name', '$last_n')";
-                    $result = mysqli_query($con,$query);
-                    $row = mysqli_fetch_array($result);
-                    if(!$result){
-                       // die('error de consulta'.mysqli_error($con));
+                    $consult="SELECT * FROM inter WHERE id_inter ='$user' AND password = '0' ";
+                    $result1 = mysqli_query($con,$consult);
+                    $row1 = mysqli_fetch_array($result1);
+
+                    if(!$result1){
+                        $query = "INSERT into inter (id_inter,password,name_inter,ap_inter)
+                        VALUES ('$user', '$password', '$name', '$last_n')";
+                        $result = mysqli_query($con,$query);
+                        $row = mysqli_fetch_array($result);
+                        if(!$result){
+                        // die('error de consulta'.mysqli_error($con));
+                        }
+                        $_SESSION["user_id"] = $row["id_inter"];
+                        $alert = 'Docente agregado';
+                        echo $alert;
+                    }else{
+                        $query = "UPDATE inter SET name_inter = '$name',
+                        ap_inter = '$last_n', password = '$password' WHERE id_inter = '$user';";
+                        $result0 = mysqli_query($con,$query);
+                        $row = mysqli_fetch_array($result0);
+
+                        
+                        $_SESSION["user_id"] = $row["id_admin"];
+                        $alert0 = 'ACTUALIZADO';
+                        echo $alert0;
                     }
-                    $_SESSION["user_id"] = $row["id_inter"];
-                    $alert = 'Docente agregado';
-                    echo $alert;
             break;
         }
 }

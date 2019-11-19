@@ -1,9 +1,10 @@
 jQuery(function(){
     console.log('jquery funciona');
+    passStrength();
 
     //Registrarse
     $('#signup-form').submit(function(e){
-      console.log('enviando....');
+    
         const postData= {
             tipo_usuario: document.getElementById("tipo_usuario").value, 
             user: $('#user').val(),
@@ -35,9 +36,10 @@ function validatePassword(){
   } else {
     password_c.setCustomValidity('Contraseñas no coinciden');
   }
+  password.onchange = validatePassword;
+  password_c.onkeyup = validatePassword;}
+  
 }
 
-password.onchange = validatePassword;
-password_c.onkeyup = validatePassword;}
 
 })

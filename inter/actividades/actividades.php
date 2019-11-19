@@ -92,6 +92,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                    <form method="post" id="check_form">
                                         <input type="hidden" id="Id">
                                         <input type="search" id="search2" class="form-control mr-sm-2" placeholder="Buscar">
                                             <br><div class="container">
@@ -101,7 +102,7 @@
                                                             <th>Boleta</th>
                                                             <th>Nombre</th>
                                                             <th>Apellidos</th>
-                                                            <th align="center">Asistencia</th>
+                                                            <th style="text-align:center">Asistencia</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="dato"></tbody>
@@ -112,8 +113,9 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="button" id="save" class="save btn btn-primary">Guardar</button>
+                                        <button type="submit" id="save" class="save btn btn-primary">Guardar</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
