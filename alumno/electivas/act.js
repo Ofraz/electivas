@@ -26,7 +26,7 @@ jQuery(function () {
                                 <td>${busc.cred_act}</td>
                                 <th>${busc.id_inter}</th>
                                 <td><button class="agregar_a btn btn-outline-info" data-toggle="modal" data-target="#editar">
-                                    <span class="glyphicon glyphicon-pencil" style="info"></span>
+                                    <span class="glyphicon glyphicon-plus" style="info"></span>
                                 </button></td>
                             </tr>`
                         });

@@ -101,36 +101,7 @@ jQuery(function () {
                 //console.log(response);
                 let busca = JSON.parse(response);
                     console.log(response);
-                    let template = '';
-                        
-                            busca.forEach(busc => {
-                                template += `<tr id_act="${busc.id_bol_act}">
-                                    <td>${busc.boleta}</td>
-                                    <td>${busc.name_a}</td>
-                                    <td>${busc.ap_a}</td>
-                                    <td align="center"><div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                        </div>
-                                    </div></td>
-                                </tr>`
-                            });
-                            $('#dato').html(template);
-                        });
-            }
-    })
-
-    //MOSTRAR LISTA ALUMNOS REGSITRADOS
-   $(document).on('click', '.alu_list', function () {
-        let element = $(this)[0].parentElement.parentElement;
-        let id = $(element).attr('id_act');
-        $('#Id').val(id);
-        console.log(id);
-        $.post('alumno-list.php', {id}, function (response) {
-            //console.log(response);
-            let busca = JSON.parse(response);
-                console.log(response);
-                let template = '';
+                    let template = '';  
                     if (busca == 0) {
                         template += `<tr><td colspan="4"><h5 align="center">**** SIN ALUMNOS INSCRITOS ****</h5></td></tr>`;
                         $('#dato').html(template);
@@ -149,6 +120,39 @@ jQuery(function () {
                         });
                         $('#dato').html(template);
                     }
+            });
+            }
+    })
+
+    //MOSTRAR LISTA ALUMNOS REGSITRADOS
+   $(document).on('click', '.alu_list', function () {
+        let element = $(this)[0].parentElement.parentElement;
+        let id = $(element).attr('id_act');
+        $('#Id').val(id);
+        console.log(id);
+        $.post('alumno-list.php', {id}, function (response) {
+            //console.log(response);
+            let busca = JSON.parse(response);
+            console.log(response);
+            let template = '';
+            if (busca == 0) {
+                template += `<tr><td colspan="4"><h5 align="center">**** SIN ALUMNOS INSCRITOS ****</h5></td></tr>`;
+                $('#dato').html(template);
+            } else {
+                busca.forEach(busc => {
+                    template += `<tr id_act="${busc.id_bol_act}">
+                        <td>${busc.boleta}</td>
+                        <td>${busc.name_a}</td>
+                        <td>${busc.ap_a}</td>
+                        <td align="center"><div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                </div>
+                            </div></td>
+                    </tr>`
+                });
+                $('#dato').html(template);
+            }
         })
     })
 })
