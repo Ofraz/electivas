@@ -1,6 +1,15 @@
 <?php
     session_start();
     include ('../connect.php');
+    
+    if (!isset($_SESSION['user_id'])) {        
+        ?>
+          <script type="text/javascript">
+                    window.location.href = '../index.php';
+          </script>
+        <?php
+            die;        
+    } 
 
     $query  = "SELECT * FROM admin WHERE id_admin = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);

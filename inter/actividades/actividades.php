@@ -1,6 +1,14 @@
 <?php
     session_start();
     include ('../../connect.php');
+    if (!isset($_SESSION['user_id'])) {        
+        ?>
+          <script type="text/javascript">
+                    window.location.href = '../../index.php';
+          </script>
+        <?php
+            die;        
+    } 
 
     $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
