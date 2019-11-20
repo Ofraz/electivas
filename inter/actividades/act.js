@@ -161,21 +161,24 @@ jQuery(function () {
     //pase de lista
     $("#check_form").submit(function (e) {  
 
+        var id = $('#Id').val();
+        console.log(id);
+
     var checkboxes = document.getElementsByName('check_list[]');
     var vals = "";
     for (var i=0, n=checkboxes.length;i<n;i++) 
     {
         if (checkboxes[i].checked) 
         {
-           vals += ", count_"+i+": "+checkboxes[i].value;
-            /*"count-"+= [i] +=": " +=vals += ","+checkboxes[i].value;
-            vals += ","+checkboxes[i].value;*/
+           vals += ","+checkboxes[i].value;
         }
     }
     if (vals) vals = vals.substring(1);
 
     console.log(vals);
-    
+    $.post('confirm_asist.php', {vals,id}, function (response) {
+        alert(response);
+    });
     
 
         /*const postData = {

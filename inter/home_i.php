@@ -76,7 +76,6 @@
                         <h4>Nombre: <?php echo $row['name_inter']; ?></h4>
                         <h4>Apellidos: <?php echo $row['ap_inter']; ?></h4>
                         <h4>No. Trabajador: <?php echo $row['id_inter']; ?></h4>
-                        <button type="button" id="edit_user" class="save_e btn btn-primary">Editar mis datos</button>
                     </div>
                 </div>
             </div>
