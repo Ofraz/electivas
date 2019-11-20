@@ -117,7 +117,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Creditos</label>
-                                            <input type="number" id="cred_a" placeholder="creditos" class="form-control" required>
+                                            <input type="number" min="0" id="cred_a" placeholder="creditos" class="form-control" required>
                                         </div>                                        
                                     </div>
                                     <div class="modal-footer">
@@ -161,7 +161,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Creditos</label>
-                                            <input type="number" id="cred_e" placeholder="creditos" class="form-control" required>
+                                            <input type="number" min="0" id="cred_e" placeholder="creditos" class="form-control" required>
                                         </div>                                        
                                     </div>
                                         

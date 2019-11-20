@@ -113,11 +113,11 @@
                                         <div class="form-group row">
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="cupo_a">Cupo</label>
-                                                <input type="number" id="cupo_a" placeholder="Cupo" class="form-control" required>
+                                                <input type="number" min="0" id="cupo_a" placeholder="Cupo" class="form-control" required>
                                             </div>
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="last_na">Créditos</label>
-                                                <input type="number" id="cred_a" placeholder="Créditos" class="form-control" required>
+                                                <input type="number" min="0" id="cred_a" placeholder="Créditos" class="form-control" required>
                                             </div>
                                             <div class="col-xl-6 col-md-12 col-sm-12">
                                                 <label for="intera_name">Responsable</label>                     
@@ -168,20 +168,20 @@
                                             <div class="form-group">
                                                 <input type="hidden" id="Id">
                                                 <label for="name_e">Nombre</label>
-                                                <input type="text" id="name_e" placeholder="Nombre" required>
+                                                <input type="text" id="name_e" placeholder="Nombre" class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="last_ne">Descripcion</label>
-                                                <input type="text" id="last_ne" placeholder="Descripcion" required> 
+                                                <input type="text" id="last_ne" placeholder="Descripcion" class="form-control" required> 
                                             </div>                                            
                                             <div class="form-group row">
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="cupo_a">Cupo</label>
-                                                <input type="number" id="cupo" placeholder="Cupo" class="form-control" required>
+                                                <input type="number" min="0" id="cupo" placeholder="Cupo" class="form-control" required>
                                             </div>
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="last_na">Créditos</label>
-                                                <input type="number" id="cred_e" placeholder="Créditos" class="form-control" required>
+                                                <input type="number" min="0" id="cred_e" placeholder="Créditos" class="form-control" required>
                                             </div>
                                             <div class="col-xl-6 col-md-12 col-sm-12">
                                                 <label for="intera_name">Responsable</label>                     
