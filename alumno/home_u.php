@@ -56,11 +56,11 @@
                     <a class="nav-link" href="electivas/elec.php">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="mis_act/act.php">Mis actividades</a>
+                    <a class="nav-link" href="mis_act/act.php">Mis Actividades</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="validacionas/home_v.php">Validaciones</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="../logout.php">Cerrar Sesión</a>
                 </li>

@@ -56,9 +56,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Mis Actividades</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="../valiaciones/home_val.php">Validaciones</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="../../logout.php">Cerrar Sesión</a>
                 </li>
