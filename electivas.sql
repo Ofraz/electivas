@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2019 a las 08:41:54
+-- Tiempo de generación: 22-11-2019 a las 10:05:42
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.1.32
 
@@ -31,8 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `activid` (
   `id_act` int(11) NOT NULL,
   `name_act` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cupo` int(5) NOT NULL,
+  `description` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `cupo` int(3) NOT NULL,
+  `disp` int(3) NOT NULL,
   `cred_act` int(2) NOT NULL,
   `id_inter` varchar(15) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'NO ASIGNADO'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -41,13 +42,14 @@ CREATE TABLE `activid` (
 -- Volcado de datos para la tabla `activid`
 --
 
-INSERT INTO `activid` (`id_act`, `name_act`, `description`, `cupo`, `cred_act`, `id_inter`) VALUES
-(1, 'TEST', 'PRUEBA DE LLAVES FORANEAS', 50, 3, 'UPIICSA'),
-(2, 'probando', 'el codigo ya jala :3', 7, 12, '123'),
-(3, 'querer', 'dormir', 7, 2, '1234'),
-(4, 'como', 'estas', 5, 6, '0'),
-(36, 'modal', 'registra  de manera correcta', 5, 8, '123'),
-(38, 'dfgbhn', 'xdcfvgbhkjmk', 22, 10, '1234');
+INSERT INTO `activid` (`id_act`, `name_act`, `description`, `cupo`, `disp`, `cred_act`, `id_inter`) VALUES
+(1, 'TEST', 'PRUEBA DE LLAVES FORANEAS ', 50, 50, 3, 'UPIICSA789'),
+(2, 'probando', 'el codigo ya jala :3', 7, 7, 12, '8520741963'),
+(3, 'querer', 'dormir', 7, 7, 2, '0147258369'),
+(4, 'como', 'estas', 5, 5, 2, '0'),
+(36, 'modal', 'registra  de manera correcta', 5, 5, 2, '8520741963'),
+(38, 'dfgbhn', 'xdcfvgbhkjmk', 22, 22, 4, '0147258369'),
+(39, 'prueba cupo', 'cupo', 15, 15, 5, '0147258369');
 
 -- --------------------------------------------------------
 
@@ -67,15 +69,25 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `password`, `name`, `ap`) VALUES
+('000102', '12345As!', 'rsxdcfbhj', 'cdyfgbhio'),
 ('123456789', '12345As!', 'user', 'user'),
 ('2011130598', 'pass', 'Ricardo', 'Jimenez Chavez'),
 ('201130598', 'pass', 'Ricardo', 'Jimenez Chavez'),
+('707172', '12345As!', 'szxdvgbh', 'cfvbjmk'),
+('800880', '12345As!', 'dazsdxhbjk', 'sdfgkhjk'),
+('807090', '12345As!', 'cfgbhjmk', 'fvgbhjm'),
+('808182', '12345As!', 'qwertasd', 'qazswsd'),
+('9090909090', '12345As!', 'sccrtyuihjiplhkgyj', 'xrdvfjhunigbjrdv'),
+('909192', '12345As!', 'zsxdcfbjmkl', 'tdxcgjmk'),
 ('admin', 'pass', 'prueba', 'p'),
 ('aide', 'leches', 'aide', 'cruz'),
 ('erika', 'flaca', 'aidecita', 'mil cruz'),
 ('JICR', '12345As!', 'tyuty', 'tyuio'),
 ('passwd', '1111', 'confirm ', 'pass'),
+('Prueba', '12345As!', 'Pruebad', 'dcfvybhu'),
+('PruebaD', '12345As!', 'PruebaD', 'PruebaD'),
 ('turrom', 'romi', 'bebe', 'baby'),
+('user0', '12345As!', 'zxdgb', 'fvgbhjkm'),
 ('validar', 'xc', 'admin', 'pass');
 
 -- --------------------------------------------------------
@@ -97,9 +109,12 @@ CREATE TABLE `alu` (
 --
 
 INSERT INTO `alu` (`boleta`, `password`, `name_a`, `ap_a`, `cred`) VALUES
-(20000, 'pass', 'Aidecita', 'Mil Cruz', 1),
-(201213, '12345As!', 'Erika', 'MILLL', 7),
-(2016600853, '22', 'Alejandra', 'Jimenez Chavez', 4);
+(2010110612, '0', 'Luz', 'Lopez Arteaga', 0),
+(2012131415, '12345As!', 'Erika', 'MILLL', 7),
+(2014094567, '0', '', '', 0),
+(2015171819, 'pass', 'Aidecita', 'Mil Cruz', 1),
+(2016600853, '22', 'Alejandra', 'Chávez Muñoz', 4),
+(2021222324, '0', 'Esteban ', 'Baeza Rojas', 4);
 
 -- --------------------------------------------------------
 
@@ -111,18 +126,18 @@ CREATE TABLE `alu_act` (
   `id_bol_act` int(11) NOT NULL,
   `boleta` int(10) NOT NULL,
   `id_act` int(11) NOT NULL,
-  `asist` int(1) NOT NULL DEFAULT 0
+  `asist` int(1) NOT NULL DEFAULT 0,
+  `save` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `alu_act`
 --
 
-INSERT INTO `alu_act` (`id_bol_act`, `boleta`, `id_act`, `asist`) VALUES
-(300, 20000, 3, 1),
-(301, 201213, 3, 0),
-(302, 2016600853, 1, 0),
-(303, 2016600853, 3, 0);
+INSERT INTO `alu_act` (`id_bol_act`, `boleta`, `id_act`, `asist`, `save`) VALUES
+(300, 2015171819, 3, 1, 0),
+(302, 2016600853, 1, 0, 0),
+(303, 2016600853, 3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -143,9 +158,9 @@ CREATE TABLE `inter` (
 
 INSERT INTO `inter` (`id_inter`, `password`, `name_inter`, `ap_inter`) VALUES
 ('0', '', 'SIN', 'ASIGNAR'),
-('123', '12345As!', 'uno', 'dostres'),
-('1234', '2903', 'test', 'prueba'),
-('UPIICSA', '', 'escuela', 'ipn');
+('0147258369', '2903', 'test', 'prueba'),
+('8520741963', '12345As!', 'uno', 'dostres'),
+('UPIICSA789', '12345As!', 'escuela', 'ipn');
 
 --
 -- Índices para tablas volcadas
@@ -192,13 +207,13 @@ ALTER TABLE `inter`
 -- AUTO_INCREMENT de la tabla `activid`
 --
 ALTER TABLE `activid`
-  MODIFY `id_act` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_act` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `alu_act`
 --
 ALTER TABLE `alu_act`
-  MODIFY `id_bol_act` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=308;
+  MODIFY `id_bol_act` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
 
 --
 -- Restricciones para tablas volcadas
