@@ -1,8 +1,6 @@
 jQuery(function () {
     console.log('jquery funciona');
     fetchAct();
-    
-
     //BUSQUEDA ACTIVIDADES
     $('#search').keyup(function () {
         let search = $('#search').val();
@@ -87,15 +85,13 @@ jQuery(function () {
                         $('#dato').html(template);
                     } else {
                         busca.forEach(busc => {
-                            template += `<tr id_act="${busc.id_act}">
+                            template += `<tr id_act="${busc.boleta}">
                                 <td>${busc.boleta}</td>
                                 <td>${busc.name_a}</td>
                                 <td>${busc.ap_a}</td>
-                                <td align="center"><div class="form-group">
-                                    <div class="form-check">
-                                        <input type="checkbox" name="check_list[]" value="${busc.boleta}">
-                                    </div>
-                                </div></td>
+                                <td><button class="alu_asist btn btn-outline-primary">
+                                <span>${busc.carrera}</span>
+                            </button></td>
                             </tr>`
                         });
                         $('#dato').html(template);
@@ -111,20 +107,6 @@ jQuery(function () {
                     let template = '';  
                     if (busca == 0) {
                         template += `<tr><td colspan="4"><h5 align="center">**** SIN ALUMNOS INSCRITOS ****</h5></td></tr>`;
-                        $('#dato').html(template);
-                    } else {
-                        busca.forEach(busc => {
-                            template += `<tr id_act="${busc.id_bol_act}">
-                                <td>${busc.boleta}</td>
-                                <td>${busc.name_a}</td>
-                                <td>${busc.ap_a}</td>
-                                <td align="center"><div class="form-group">
-                                    <div class="form-check">
-                                        <input type="checkbox" name="check_list[]" value="${busc.boleta}">
-                                    </div>
-                                </div></td>
-                            </tr>`
-                        });
                         $('#dato').html(template);
                     }
             });
@@ -147,15 +129,13 @@ jQuery(function () {
                 $('#dato').html(template);
             } else {
                 busca.forEach(busc => {
-                    template += `<tr id_act="${busc.id_bol_act}">
-                        <td>${busc.boleta}</td>
+                    template += `<tr id_act="${busc.boleta}">
+                        <td id_ac=>${busc.boleta}</td>
                         <td>${busc.name_a}</td>
                         <td>${busc.ap_a}</td>
-                        <td align="center"><div class="form-group">
-                            <div class="form-check">
-                                <input type="checkbox" name="check_list[]" value="${busc.boleta}">
-                            </div>
-                        </div></td>
+                        <td><button class="alu_asist btn btn-outline-primary">
+                                <span>${busc.carrera}</span>
+                            </button></td>
                     </tr>`
                 });
                 $('#dato').html(template);
@@ -163,42 +143,54 @@ jQuery(function () {
         })
     });
 
-    //pase de lista
-    $("#check_form").submit(function (e) {  
-
-        var id = $('#Id').val();
-        console.log(id);
-
-    var checkboxes = document.getElementsByName('check_list[]');
-    var vals = "";
-    for (var i=0, n=checkboxes.length;i<n;i++) 
-    {
-        if (checkboxes[i].checked) 
-        {
-           vals += ","+checkboxes[i].value;
-        }
-    }
-    if (vals) vals = vals.substring(1);
-
-    console.log(vals);
-    $.post('confirm_asist.php', {vals,id}, function (response) {
-        alert(response);
-    });
-    
-
-        /*const postData = {
-            user: $('#user_e').val(),
-            name: $('#name_e').val(),
-            last: $('#last_ne').val(),
-            id: $('#Id').val()
-        };
-        $.post('int_add2.php', postData, function (response) {
+ //PASE DE LISTA
+ $(document).on('click', '.alu_asist', function (e) {
+    console.log('click');
+    let ident = $('#Id').val();
+    console.log(ident);
+    let element = $(this)[0].parentElement.parentElement;
+    let boleta = $(element).attr('id_act');
+    console.log(boleta);
+    $.post('confirm_asist.php', {ident,boleta}, function () {
+        id=$('#Id').val();
+        $.post('alumno-list.php', {id}, function (response) {
             //console.log(response);
-            alert(response);
-            fetchInter();
-            $('#editar').modal('hide');
-        });*/
+            let busca = JSON.parse(response);
+            console.log(response);
+            let template = '';
+            if (busca == 0) {
+                template += `<tr><td colspan="4"><h5 align="center">**** SIN ALUMNOS INSCRITOS ****</h5></td></tr>`;
+                $('#dato').html(template);
+            } else {
+                busca.forEach(busc => {
+                    template += `<tr id_act="${busc.boleta}">
+                        <td id_ac=>${busc.boleta}</td>
+                        <td>${busc.name_a}</td>
+                        <td>${busc.ap_a}</td>
+                        <td><button class="alu_asist btn btn-outline-primary">
+                                <span>${busc.carrera}</span>
+                            </button></td>
+                    </tr>`
+                });
+                $('#dato').html(template);
+            }
+        })
+    })
+    e.preventDefault();    
+})
+
+    //pase de lista
+    $("#check_form").submit(function (e) { 
+        id=$('#Id').val();
+        console.log(id); 
+        if(confirm("¿Deseas enviar los datos?: Una vez hecho, no se podrán hacer más modificaciones y la actividad será borrada.")){
+            
+            $.post('load_act.php', {id}, function (response) {
+                alert(response);
+                fetchAct();
+            })
+        }
         e.preventDefault();
     })
-
+    
 })

@@ -95,8 +95,9 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                    <form method="post" id="check_form">
+                                    <form id="check_form">
                                         <input type="hidden" id="Id">
+                                        <input type="hidden" id="Id_act">
                                         <input type="search" id="search2" class="form-control mr-sm-2" placeholder="Buscar">
                                             <br><div class="container">
                                                 <table class="table table-sm ">
@@ -112,10 +113,7 @@
                                                 </table>
                                             </div>
                                     </div>
-
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Cerrar</button>
                                         <button type="submit" id="save" class="save btn btn-primary">Enviar</button>
                                     </div>
                                     </form>

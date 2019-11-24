@@ -6,7 +6,7 @@
     $id = $_POST['id'];
 
     if(!empty($search)){
-        $query = "SELECT alu_act.boleta, alu.name_a, alu.ap_a, alu_act.id_act
+        $query = "SELECT alu_act.boleta, alu.name_a, alu.ap_a, alu_act.id_act, alu_act.asist
         FROM alu_act
         INNER JOIN alu ON alu_act.boleta = alu.boleta
        
@@ -24,7 +24,8 @@
                // 'id_bol_act'=>$row['id_bol_act'],
                 'boleta'=>$row['boleta'],
                 'name_a'=>$row['name_a'],
-                'ap_a'=>$row['ap_a']                                 
+                'ap_a'=>$row['ap_a'],
+                'carrera'=>$row['asist']                                 
             );
         }
         $jsonstring = json_encode($json);
