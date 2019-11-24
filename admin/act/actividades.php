@@ -78,7 +78,7 @@
             <div class="col-xl-10 mx-auto ">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="wlc">Bienvenido <?php echo $row['name']; ?></h3>
+                        <h3 class="wlc"><?php echo $row['name']," ",$row['ap']; ?></h3>
                     </div>
                 </div>
             </div>
@@ -101,23 +101,24 @@
                                     </div>
                                     <div class="modal-body">
                                     <form id="alta_form">
-                                        <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="name_a">Nombre actividad</label>
                                             <input type="text" id="name_a" placeholder="Nombre" class="form-control" required>
+                                            <div id ="activ_resulta"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_na">Descripcion</label>
-                                            <input type="text" id="last_na" placeholder="Descripcion" class="form-control" required>
+                                            <textarea type="text"  minlenght="10" maxlenght="500" id="last_na" placeholder="Descripcion" rows="3"
+                                            class="form-control" title="Se tiene un máximo de 500 caracteres"required></textarea>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="cupo_a">Cupo</label>
-                                                <input type="number" min="0" id="cupo_a" placeholder="Cupo" class="form-control" required>
+                                                <input type="number" min="1" id="cupo_a" placeholder="Cupo" class="form-control" required>
                                             </div>
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="last_na">Créditos</label>
-                                                <input type="number" min="0" id="cred_a" placeholder="Créditos" class="form-control" required>
+                                                <input type="number" min="1" max="5" id="cred_a" placeholder="Créditos" class="form-control" required>
                                             </div>
                                             <div class="col-xl-6 col-md-12 col-sm-12">
                                                 <label for="intera_name">Responsable</label>                     
@@ -167,21 +168,22 @@
                                         <form method="post" id="editar_form">
                                             <div class="form-group">
                                                 <input type="hidden" id="Id">
+                                                <input type="hidden" id="Id_name">
                                                 <label for="name_e">Nombre</label>
                                                 <input type="text" id="name_e" placeholder="Nombre" class="form-control" required>
+                                                <div id ="activ_resulte"></div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="last_ne">Descripcion</label>
-                                                <input type="text" id="last_ne" placeholder="Descripcion" class="form-control" required> 
-                                            </div>                                            
+                                            <label for="last_na">Descripcion</label>
+                                            <textarea type="text"  minlenght="10" maxlenght="500" id="last_ne" placeholder="Descripcion" rows="3"
+                                            class="form-control" title="Se tiene un máximo de 500 caracteres"required></textarea>                                            
                                             <div class="form-group row">
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="cupo_a">Cupo</label>
-                                                <input type="number" min="0" id="cupo" placeholder="Cupo" class="form-control" required>
+                                                <input type="number" min="1" id="cupo" placeholder="Cupo" class="form-control" required>
                                             </div>
                                             <div class="col-xl-3 col-md-5 col-sm-5">
                                                 <label for="last_na">Créditos</label>
-                                                <input type="number" min="0" id="cred_e" placeholder="Créditos" class="form-control" required>
+                                                <input type="number" min="1"  max="5" id="cred_e" placeholder="Créditos" class="form-control" required>
                                             </div>
                                             <div class="col-xl-6 col-md-12 col-sm-12">
                                                 <label for="intera_name">Responsable</label>                     
@@ -225,6 +227,7 @@
                                         <th>Nombre</th>
                                         <th>Descripcion</th>
                                         <th>Cupo</th>
+                                        <th>Disp.</th>
                                         <th>Creditos</th>
                                         <th>Responsable</th>
                                         <th style="text-align:center">Editar</th>

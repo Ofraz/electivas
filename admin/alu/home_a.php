@@ -78,7 +78,7 @@
             <div class="col-xl-10 mx-auto ">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="wlc">Bienvenido <?php echo $row['name']; ?></h3>
+                        <h3 ><?php echo $row['name']," ",$row['ap']; ?></h3>
                     </div>
                 </div>
             </div>
@@ -99,25 +99,27 @@
                                     </div>
                                     <div class="modal-body">
                                     <form method="post" id="alta_form">
-                                        <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_a">Boleta</label>
-                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control"
-                                            pattern="[0-9\s]+" title="Solo se admiten numeros" required> 
+                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control" minlenght="10" maxlenght="10"
+                                            pattern="[0-9\s]" title="Solo se admiten numeros" required>
+                                            <div id ="user_resulta"></div> 
                                         </div>
                                         <div class="form-group">
                                             <label for="name_e">Nombre</label>
                                             <input type="text" id="name_a" placeholder="Nombre" class="form-control"
                                             pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
+                                            <div id ="name_resulta"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Apellidos</label>
                                             <input type="text" id="last_na" placeholder="Apellidos" class="form-control"
                                             pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
+                                            <div id ="last_resulta"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Creditos</label>
-                                            <input type="number" min="0" id="cred_a" placeholder="creditos" class="form-control" required>
+                                            <input type="number" min="0" max="20"id="cred_a" placeholder="creditos" class="form-control" required>
                                         </div>                                        
                                     </div>
                                     <div class="modal-footer">
@@ -148,20 +150,24 @@
                                             <label for="user_e">Boleta</label>
                                             <input type="text" id="user_e" placeholder="Usuario" class="form-control"
                                             pattern="[0-9\s]+" title="Solo se admiten números" required>
+                                            <div id ="user_resulte"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="name_e">Nombre</label>
                                             <input type="text" id="name_e" placeholder="Nombre" class="form-control"
-                                            class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
+                                            class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                            <div id ="name_resulte"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Apellidos</label>
                                             <input type="text" id="last_ne" placeholder="Apellidos" class="form-control"
                                             class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required> 
+                                            <div id ="last_resulte"></div>
+
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Creditos</label>
-                                            <input type="number" min="0" id="cred_e" placeholder="creditos" class="form-control" required>
+                                            <input type="number" min="0" max="20" id="cred_e" placeholder="creditos" class="form-control" required>
                                         </div>                                        
                                     </div>
                                         

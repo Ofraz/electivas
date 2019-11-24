@@ -49,6 +49,9 @@
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="electivas/electivas.php">Electivas</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="actividades/actividades.php">Mis Actividades</a>
                 </li>
                 <li class="nav-item">

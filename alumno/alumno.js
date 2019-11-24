@@ -1,7 +1,45 @@
 jQuery(function () {
     console.log('jquery funciona');
     fetchUsers();
+    fetchCarrera();
 
+    function fetchCarrera(){           
+          let vara = $('#val_a').val();
+          let  cred = $('#val_b').val();
+        if(cred == 0){
+            template = `<div class="form-inline"><select class="form-control col-md-5  mr-3" id="carrera_c" required>
+                <option value=''>SELECCIONA TU CARRERA</option>
+                <option value='20'>INGENIERIA INDUSTRIAL</option>
+                <option value='18'>ADMINISTRACION INDUSTRIAL</option>
+                <option value='20'>INGENIERIA EN TRANSPORTE</option>
+                <option value='14'>INGENIERIA EN INFORMATICA</option>
+                <option value='20'>CIENCIAS DE LA INFORMATICA</option>
+            </select>
+            <button  class="cred_c btn  btn-outline-primary">Enviar</button>`
+            $('#carrera').html(template);
+        } else{
+            if (vara >= cred){
+                template = `<h3 class="text-success text-center">EN HORA BUENA, ¡HAZ CUBIERTO TODOS TUS CRÉDITOS! </h3>
+                            <p class="text-center">¡¡Acude a la coordinación de electivas para saber qué sigue!!</p>`
+                            $('#carrera').html(template);
+            }
+        }     
+    }
+
+    //actualiza carrera
+    $(document).on('click', '.cred_c', function (){
+        val = document.getElementById("carrera_c").value
+    if(confirm('¿Estás seguro de que tu carrera es la correcta?. La opcion no puede deshacerse')){
+        
+        $.post('carrera.php', {val}, function (response) {
+            console.log(response);
+            alert('Datos actualizados!');
+            $('#carrera').html("");
+            $('#val_b').val(val);
+        })
+    }
+
+    })
     //BUSQUEDA
     $('#search').keyup(function () {
         let search = $('#search').val();

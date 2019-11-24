@@ -78,7 +78,7 @@
             <div class="col-xl-10 mx-auto ">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="wlc">Bienvenido <?php echo $row['name']; ?></h3>
+                        <h3 class="wlc"><?php echo $row['name']," ",$row['ap']; ?></h3>
                     </div>
                 </div>
             </div>
@@ -101,21 +101,23 @@
                                     </div>
                                     <div class="modal-body">
                                     <form method="post" id="alta_form">
-                                        <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_a">Clave T.</label>
-                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control"
-                                            pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten caracteres especiales" required>
+                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control" maxlength="10"
+                                            pattern="([a-zA-Z0-9\s]{10,})" title="Solo numeros y letras no acentuadas. Son 10 caracteres" required>
+                                            <div id ="inter_resulta"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="name_a">Nombre</label>
                                             <input type="text" id="name_a" placeholder="Nombre" class="form-control"
-                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                            pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                            <div id ="name_resulta"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_n">Apellidos</label>
                                             <input type="text" id="last_na" placeholder="Apellidos" class="form-control"
                                             pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                            <div id ="last_resulta"></div>
                                         </div>
                                     </div>
 
@@ -145,18 +147,21 @@
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_e">Clave T.</label>
-                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control"
-                                            pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten caracteres especiales" required>
+                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control" maxlength="10" 
+                                            pattern="([a-zA-Z0-9\s]{10,})" title="Solo numeros y letras no acentuadas. Son 10 caracteres" required>
+                                            <div id ="inter_resulte"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="name_e">Nombre</label>
                                             <input type="text" id="name_e" placeholder="Nombre" class="form-control"
                                             pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                            <div id ="name_resulte"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="last_ne">Apellidos</label>
                                             <input type="text" id="last_ne" placeholder="Apellidos" class="form-control"
                                             pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                            <div id ="last_resulte"></div>
                                         </div>
                                     </div>
 

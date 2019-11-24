@@ -52,6 +52,9 @@
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="../electivas/electivas.php">Electivas</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Mis Actividades</a>
                 </li>
                 <li class="nav-item">
@@ -113,7 +116,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="submit" id="save" class="save btn btn-primary">Guardar</button>
+                                        <button type="submit" id="save" class="save btn btn-primary">Enviar</button>
                                     </div>
                                     </form>
                                 </div>

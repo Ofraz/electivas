@@ -13,7 +13,7 @@
             $json[] =array(
             'id_inter' =>$row['id_inter'],
             'name_inter'=>$row['name_inter'],
-            'ap_inter'=>$row['ap_inter'],                                  
+            'ap_inter'=>$row['ap_inter']                                  
             );
         }
         $jsonstring = json_encode($json[0]);

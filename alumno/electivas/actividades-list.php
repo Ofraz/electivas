@@ -8,7 +8,8 @@
     WHERE activid.id_act NOT IN 
     (SELECT alu_act.id_act FROM alu_act 
     INNER JOIN alu ON alu_act.boleta  = alu.boleta 
-    WHERE alu.boleta = '$_SESSION[user_id]')";
+    WHERE alu.boleta = '$_SESSION[user_id]') 
+    AND activid.disp != '0'";
 
     $result = mysqli_query($con, $query);
 

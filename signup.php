@@ -1,5 +1,5 @@
 <?php
-      session_start();
+    session_start();
     include('connect.php');
 
     if(isset($_POST['name'])) {
@@ -9,97 +9,52 @@
         $name = $_POST['name'];
         $last_n = $_POST['last_n'];
         
-        
-
         switch ($tipo_usuario) {
             case 'ad':
-                    $consult="SELECT * FROM admin WHERE id_admin ='$user' AND password = '0' ";
-                    $result1 = mysqli_query($con,$consult);
-                    $row1 = mysqli_fetch_array($result1);
-
-                    if(!$result1){
-                        $query = "INSERT into admin (id_admin,password,name,ap)
-                        VALUES ('$user', '$password', '$name', '$last_n')";
-                        $result = mysqli_query($con,$query);
-                        $row = mysqli_fetch_array($result);
-                        echo $result;
-
-                        if(!$result){
-                          die('error de consulta'.mysqli_error($con));
-                        }
-                        $_SESSION["user_id"] = $row["id_admin"];
-                        $alert = 'Administrador agregado';
-                        echo $alert;
-                    }else{
-                        $query = "UPDATE admin SET name = '$name',
-                        ap = '$last_n', password = '$password' WHERE id_admin = '$user';";
-                        $result0 = mysqli_query($con,$query);
-                        $row = mysqli_fetch_array($result0);
-
-                        
-                        $_SESSION["user_id"] = $row["id_admin"];
-                        $alert0 = 'ACTUALIZADO';
-                        echo $alert0;
-                    }
+                $query = "INSERT INTO admin (id_admin,password,name,ap) 
+                VALUES ('$user', '$password', '$name', '$last_n')
+                ON DUPLICATE KEY
+                UPDATE name = '$name', 
+                ap = '$last_n', password = '$password'";
+                $result = mysqli_query($con,$query);
+                if(!$result){
+                   die('error de consulta'.mysqli_error($con));
+                }
+                $_SESSION["user_id"] = $user;
+                $alert = 'Administrador agregado';
+                echo $tipo_usuario;
             break;
             case 'us':
-                    $consult="SELECT * FROM alu WHERE boleta ='$user' AND password = '0' ";
-                    $result1 = mysqli_query($con,$consult);
-                    $row1 = mysqli_fetch_array($result1);
-
-                    if(!$result1){
-                        $query = "INSERT into alu (boleta,password,name_a,ap_a)
-                        VALUES ('$user', '$password', '$name', '$last_n')";
-                        $result = mysqli_query($con,$query);
-                        $row = mysqli_fetch_array($result);
-                        if(!$result){
-                        // die('error de consulta'.mysqli_error($con));
-                        }
-                        $_SESSION["user_id"] = $row["boleta"];
-                        $alert = 'Alumno agregado';
-                        echo $alert;
-                    }else{
-                        $query = "UPDATE alu SET name_a = '$name',
-                        ap_a = '$last_n', password = '$password' WHERE boleta = '$user';";
-                        $result0 = mysqli_query($con,$query);
-                        $row = mysqli_fetch_array($result0);
-
-                        
-                        $_SESSION["user_id"] = $row["id_admin"];
-                        $alert0 = 'ACTUALIZADO';
-                        echo $alert0;
+                    $query = "INSERT into alu (boleta,password,name_a,ap_a)
+                    VALUES ('$user', '$password', '$name', '$last_n')
+                    ON DUPLICATE KEY
+                    UPDATE name_a = '$name',
+                    ap_a = '$last_n', password = '$password'";
+                    $result = mysqli_query($con,$query);
+                    if(!$result){
+                        die('error de consulta'.mysqli_error($con));
                     }
+                    $_SESSION["user_id"] = $user;
+                    $alert = 'Alumno agregado';
+                    echo $tipo_usuario;
             break;
             case 'in':
-                    $consult="SELECT * FROM inter WHERE id_inter ='$user' AND password = '0' ";
-                    $result1 = mysqli_query($con,$consult);
-                    $row1 = mysqli_fetch_array($result1);
-
-                    if(!$result1){
-                        $query = "INSERT into inter (id_inter,password,name_inter,ap_inter)
-                        VALUES ('$user', '$password', '$name', '$last_n')";
-                        $result = mysqli_query($con,$query);
-                        $row = mysqli_fetch_array($result);
-                        if(!$result){
-                        // die('error de consulta'.mysqli_error($con));
-                        }
-                        $_SESSION["user_id"] = $row["id_inter"];
-                        $alert = 'Docente agregado';
-                        echo $alert;
-                    }else{
-                        $query = "UPDATE inter SET name_inter = '$name',
-                        ap_inter = '$last_n', password = '$password' WHERE id_inter = '$user';";
-                        $result0 = mysqli_query($con,$query);
-                        $row = mysqli_fetch_array($result0);
-
-                        
-                        $_SESSION["user_id"] = $row["id_admin"];
-                        $alert0 = 'ACTUALIZADO';
-                        echo $alert0;
+                    $query = "INSERT into inter (id_inter,password,name_inter,ap_inter)
+                    VALUES ('$user', '$password', '$name', '$last_n')
+                    ON DUPLICATE KEY
+                    UPDATE name_inter = '$name',
+                    ap_inter = '$last_n', password = '$password'";
+                    $result = mysqli_query($con,$query);
+                    if(!$result){
+                        die('error de consulta'.mysqli_error($con));
                     }
+                    $_SESSION["user_id"] = $user;
+                    $alert = 'Docente agregado';
+                    echo $tipo_usuario;
             break;
         }
-}
+        exit();
+}   
  ?>
 
 <!DOCTYPE html>
@@ -109,7 +64,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crear un Usuario-Electivas UPIICSA</title>
+    <title>Crear un Usuario</title>
     <link rel="icon" href="visual/upiicsa.bmp" type="image/bmp">
     <link rel="stylesheet" href="css/bootstrap.css">
     <!--bootswatch litera -->
@@ -122,7 +77,7 @@
         <a href="index.php" class="navbar-brand">Electivas UPIICSA</a>
     </nav>
 
-    <div class="col-md-8 mx-auto mt-4">
+    <div class="col-xl-6 col-md-8 mx-auto mt-4">
         <div class="card">
             <div class="card-header bg-upiicsa">
                 <h5>Crear Usuario</h5>
@@ -131,48 +86,49 @@
                 <div class="card-body">
                     <div class="card-block">
                         <div class="row">
-                            <div class="col-12 col-md-12 col-xl-6">
+                            <div class="col-xl-12 col-md-12 col-xl-6">
                                 <div class="form-group">
                                     <label for="tipo_usuario">Tipo de Usuario</label>
                                     <select class="form-control" id="tipo_usuario" name="tipo_usuario" required>
                                         <option value=''>SELECCIONA TIPO DE USUARIO</option>
-                                        <option value='ad'>Administrador</option>
+                                        <option value='ad'>P. Electivas</option>
                                         <option value='us'>Alumno</option>
                                         <option value='in'>Docente</option>
                                     </select>
                                 </div>
                                 <!-- -->
                                 <div class="form-group">
-                                    <label for="name">Nombre</label>
-                                    <input type="text" id="name" placeholder="Nombre" 
-                                    class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                    <label for="user">Usuario (Boleta/Cve.Trabajador)</label>
+                                    <input type="text" id="user" placeholder="Usuario" class="form-control" milength="10" maxlength="10"
+                                    pattern="[A-Za-z0-9]+" title="Solo numeros y letras no acentuadas. Son 10 caracteres" required>
+                                    <div id ="user_result"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="last_n">Apellidos</label>
-                                    <input type="text" id="last_n" placeholder="Apellidos" 
-                                    class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                    <label for="password">Contraseña</label>
+                                    <input type="password" id="password" placeholder="Contraseña" minlength="8" maxlenght ="16"
+                                        class="form-control" pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[$&+,:;=?@#|'<>.^*()%!-])([^\s]){8,16}$" 
+                                        title="Al menos 8 caracteres. 1 mayuscula, 1 letra, 1 numero y 1 caracter '!$%&(-/:-?_{}~'" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Confirmar Contraseña</label>
+                                    <input type="password" id="password_c" placeholder="Confirmar contraseña" class="form-control" 
+                                    title="Debe coincidir con la contraseña" required>
+                                    <div id ="pass_result"></div>
                                 </div>
 
-                            </div>
-                            <div class="col-12 col-md-12 col-xl-6">
+                            
                                 <div class="form-group">
-                                    <label for="user">Usuario (Boleta/Num.Trabajador)</label>
-                                    <input type="text" id="user" placeholder="Usuario" 
-                                    class="form-control" pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten caracteres especiales" required>
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" placeholder="Nombre" class="form-control" minlength="3" maxlength="30"
+                                    pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                    <div id ="name_result"></div>
                                 </div>
-                                <form id="verifica">
-                                    <div class="form-group">
-                                        <label for="password">Contraseña</label>
-                                        <input type="password" id="password" placeholder="Contraseña"
-                                            class="form-control" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" 
-                                            title="Al menos 8 caracteres. 1 mayuscula, 1 letra, 1 numero y 1 caracter especial" required>
-                
-                                        <label for="password">Confirmar Contraseña</label>
-                                        <input type="password" id="password_c" placeholder="Confirmar contraseña"
-                                            class="form-control" required />
-                                        <span id='message'></span>
-                                    </div>
-                                </form>
+                                <div class="form-group" id="form_user">
+                                    <label for="last_n">Apellidos</label>
+                                    <input type="text" id="last_n" placeholder="Apellidos" class="form-control" minlength="8" maxlength="40"
+                                    pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
+                                    <div id ="last_result"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer">

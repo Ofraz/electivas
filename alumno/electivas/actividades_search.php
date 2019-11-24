@@ -16,7 +16,8 @@
             OR activid.description LIKE '$search%'
             OR activid.cupo LIKE '$search%'
             OR activid.cred_act LIKE '$search%'
-            OR concat(inter.name_inter, ' ',inter.ap_inter) LIKE '%$search%')";
+            OR concat(inter.name_inter, ' ',inter.ap_inter) LIKE '%$search%')
+            AND activid.disp != '0'";
 
         $result = mysqli_query($con, $query);
         if(!$result){

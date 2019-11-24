@@ -9,11 +9,14 @@
         if(!$result) {
             die('Error de Consulta'.mysqli_error($con));
         }
-        /*$res = "ALTER TABLE alu_act AUTO_INCREMENT = 1";
-        $result2 = mysqli_query($con, $query);
-        if(!$result2) {
+        
+        $query_u = "UPDATE activid SET disp = disp + 1
+        WHERE id_act = '$id'";
+        
+        $result1 = mysqli_query($con, $query_u);
+        if(!$result1) {
             die('Error de Consulta'.mysqli_error($con));
-        }*/
+        }
         echo "Actividad Eliminada";
     }  
 ?>

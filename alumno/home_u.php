@@ -83,10 +83,14 @@
             <div class="col-12 col-md-12 col-xl-10 mx-auto p-3">
                 <div class="card">
                     <div class="card-body">
+                    <input type="hidden" id="val_c" value ="<?php echo $row['boleta']; ?>">
+                    <input type="hidden" id="val_a" value ="<?php echo $row['cred']; ?>">
+                    <input type="hidden" id="val_b" value ="<?php echo $row['carrera']; ?>">
                         <h4>Nombre: <?php echo $row['name_a']; ?></h4>
                         <h4>Apellidos: <?php echo $row['ap_a']; ?></h4>
                         <h4>Boleta: <?php echo $row['boleta']; ?></h4>
-                        <h4>Creditos : <?php echo $row['cred']; ?></h4>
+                        <h4 >Creditos : <?php echo $row['cred']; ?></h4>
+                        <span id="carrera"></span>
                     </div>
                 </div>
             </div>

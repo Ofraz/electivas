@@ -23,6 +23,7 @@ jQuery(function () {
                                 <td>${busc.name_act}</td>
                                 <td>${busc.description}</td>
                                 <td>${busc.cupo}</td>
+                                <td>${busc.disp}</td>
                                 <td>${busc.cred_act}</td>
                                 <th>${busc.id_inter}</th>
                                 <td align="center"><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
@@ -55,6 +56,7 @@ jQuery(function () {
                         <td>${busc.name_act}</td>
                         <td>${busc.description}</td>
                         <td>${busc.cupo}</td>
+                        <td>${busc.disp}</td>
                         <td>${busc.cred_act}</td>
                         <th>${busc.id_inter}</th>
                         <td align="center"><button class="edit_a btn btn-outline-warning" data-toggle="modal" data-target="#editar">
@@ -99,6 +101,7 @@ jQuery(function () {
             $('#cred_e').val(valor.cred_act);
             $('#intere_name').val(valor.id_inter); //investigar el motivo por el cuál no captura de forma correcta a veces
             $('#Id').val(valor.id_act);
+            $('#Id_name').val(valor.name_act);
         })
     })
 
@@ -139,10 +142,76 @@ jQuery(function () {
             $('#name_a').val('');
             $('#last_na').val('');
             $('#cupo_a').val('');
+            $('#disp').val('');
             $('#cred_a').val('');
             $("#intera_name").val('');
             $('#alta').modal('hide');
         });
         e.preventDefault();
+    })
+
+    //user disponible nvo
+    $('#name_a').keyup(function () {
+        let search = $('#name_a').val();
+        console.log(search);
+        if (search != "") {
+            $.ajax({
+                url: 'validar_act.php',
+                type: 'POST',
+                data: {search},
+                success: function (response) {
+                    console.log(response);
+                    if(response == "No disponible."){
+                        template= "<span style='font:bold;color:#ff3636;font-size:75%;'>No disponible.</span>";
+                        $('#activ_resulta').html(template);
+                        $('#save').attr('disabled', true);
+                        $('#name_a').css({'border':'#ff3636'});
+                        //document.getElementById("user").required = false;
+                    }
+                    else if(response == "Disponible."){
+                        template= "<span style='font:bold;color:#008000;font-size:75%;'>Disponible.</span>";
+                        $('#activ_resulta').html(template);
+                        $('#save').attr('disabled', false);
+                        $('#name_a').css({'border':'#008000'});
+                    }
+                }
+            })
+        }else{$('#activ_resulta').html("");
+        $('#name_a').css({'border':'#e5e5e5'});
+        $('#save').attr('disabled', false);}
+    })
+
+    //validar user edit
+    $('#name_e').keyup(function () {
+        let search = $('#name_e').val();
+        value = $('#Id_name').val();
+        console.log(value);
+        if (search != "") {
+            $.ajax({
+                url: 'validar_act.php',
+                type: 'POST',
+                data: {search},
+                success: function (response) {
+                   
+                    if( search == value){
+                        console.log(search,value);
+                        $('#activ_resulte').html("<span style='font:bold;color:#adb5bd;font-size:75%;'>Sin cambios.</span>");
+                        $('#save_e').attr('disabled', false);
+                    }
+                    else if(response == "No disponible."){
+                        template= "<span style='font:bold;color:#ff3636;font-size:75%;'>No disponible.</span>";
+                        $('#activ_resulte').html(template);
+                        $('#save_e').attr('disabled', true);
+                        
+                    }
+                    else if(response == "Disponible."){
+                        template= "<span style='font:bold;color:#008000;font-size:75%;'>Disponible.</span>";
+                        $('#activ_resulte').html(template);
+                        $('#save_e').attr('disabled', false);
+                    }
+                }
+            })
+        }else{$('#activ_resulte').html("");
+        $('#save_e').attr('disabled', false);}
     })
 })

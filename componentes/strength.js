@@ -65,17 +65,17 @@
                       thismeter.removeClass().html('');
                 }else if (total <= 1) {
                    thismeter.removeClass();
-                   thismeter.addClass('veryweak').html('<p>Seguridad: Muy débil</p>');
+                   thismeter.addClass('veryweak').html('<p style="font-size:75%;">Seguridad: Muy débil</p>');
                 } else if (total == 2){
                     thismeter.removeClass();
-                   thismeter.addClass('weak').html('<p>Seguridad: Débil</p>');
+                   thismeter.addClass('weak').html('<p style="font-size:75%;">Seguridad: Débil</p>');
                 } else if(total == 3){
                     thismeter.removeClass();
-                   thismeter.addClass('medium').html('<p>Seguridad: Regular</p>');
+                   thismeter.addClass('medium').html('<p style="font-size:75%;">Seguridad: Regular</p>');
 
                 } else {
                      thismeter.removeClass();
-                   thismeter.addClass('strong').html('<p>Seguridad: Fuerte</p>');
+                   thismeter.addClass('strong').html('<p style="font-size:75%;">Seguridad: Fuerte</pfont-size:70%;>');
                 } 
                 console.log(total);
             }
@@ -90,7 +90,7 @@
 
             thisid = this.$elem.attr('id');
 
-            this.$elem.addClass(this.options.strengthClass).attr('data-password',thisid).after('<input style="display:none" class="'+this.options.strengthClass+'" data-password="'+thisid+'" type="text" name="" value=""><a data-password-button="'+thisid+'" href="" class=""></a><div class="'+this.options.strengthMeterClass+'"><div data-meter="'+thisid+'"><p></p></div></div>');
+            this.$elem.addClass(this.options.strengthClass).attr('data-password',thisid).after('<div data-meter="'+thisid+'"></div>');
              
             this.$elem.bind('keyup keydown', function(event) {
                 thisval = $('#'+thisid).val();
