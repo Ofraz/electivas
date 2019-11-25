@@ -1,16 +1,16 @@
 <?php
- //Reseteo variables.
- $error = $usuario = NULL;
+require "mail/PHPMailer-master/src/Exception.php";
+require "mail/PHPMailer-master/src/PHPMailer.php";
+require "mail/PHPMailer-master/src/SMTP.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
- //Comprobamos si esta definida el formulario y no es NULL.
-if (isset($_POST['email'])) {
-    $email= $_POST['email'];
+$email= $_POST['email'];
     
-
-    require "mail/PHPMailer-master/src/Exception.php";
-    require "mail/PHPMailer-master/src/PHPMailer.php";
-    require "mail/PHPMailer-master/src/SMTP.php";
     
+     
+   
+     
     $oMail= new PHPMailer();
     $oMail->isSMTP();
     $oMail->Host="smtp.gmail.com";
@@ -22,14 +22,9 @@ if (isset($_POST['email'])) {
     $oMail->setFrom("electivasupiicsa@gmail.com","Electivas UPIICSA");
     $oMail->addAddress("$email","RJC Moderador");
     $oMail->Subject="Recuperacion de Contraseña";
-    $oMail->msgHTML("¡Hola! parece que haz olvidado tu contraseña, por el momento nos encontramos implementando un método más seguro para reestablecer tu contraseña.
-    Sé muy cuidadoso guardando ésta contraseña en un lugar seguro y borra inmediatamente este correo.
-    
-    Pass: '$pass'");
+    $oMail->msgHTML("¡Hola! parece que haz olvidado tu contraseña, por el momento nos encontramos implementando un método más seguro para reestablecerla. Sé muy cuidadoso guardandola en un lugar seguro y borra inmediatamente este correo.Pass:");
     
     if(!$oMail->send()){
        echo $oMail->ErrorInfo;
     }else{echo "correo enviado!";}
-    
-} 
 ?>

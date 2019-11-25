@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-upiicsa">
         <a href="index.php" class="navbar-brand">Electivas UPIICSA</a>
     </nav>
-    <form method="post">
+    <form id="signup-form">
         <div class="col-md-4 mx-auto mt-5">
             <div class="card">
                 <div class="card-header ">
@@ -74,15 +74,15 @@
                 })
             }else{$('#mail_result').html("");
             $('#submit').attr('disabled', false);}
-        });
+        })
 
         $('#signup-form').submit(function(e){
-            email = $('#email').val();
+           email= $('#email').val(),
             console.log(email);
-            $.post('resetForm.php',{email},function(response){
-                alert('response');
-                window.location= 'index.php';
+            $.post('ResetForm.php', {email}, function (response){
+                alert(response);
             })
+            e.preventDefault();
         })
      });
     </script>
