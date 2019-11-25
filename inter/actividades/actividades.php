@@ -55,7 +55,7 @@
                     <a class="nav-link" href="../electivas/electivas.php">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis Actividades</a>
+                    <a class="nav-link" href="#">Asistencias</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../../logout.php">Cerrar Sesión</a>

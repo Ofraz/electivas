@@ -50,6 +50,10 @@ jQuery(function () {
                 let busca = JSON.parse(response);
                 console.log(response);
                 let template = '';
+                if (busca == 0) {
+                    template += `<tr><td colspan="8"><h5 align="center">**** SIN ASIGNACIONES ****</h5></td></tr>`;
+                    $('#datos').html(template);
+                } else {
                 busca.forEach(busc => {
                     template += `<tr id_act="${busc.id_act}">
                         <td>${busc.name_act}</td>
@@ -67,6 +71,7 @@ jQuery(function () {
                     
                 });
                 $('#datos').html(template);
+            }
             }
         })
     }

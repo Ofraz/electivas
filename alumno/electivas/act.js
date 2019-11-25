@@ -22,7 +22,7 @@ jQuery(function () {
                             template += `<tr id_act="${busc.id_act}">
                                 <td>${busc.name_act}</td>
                                 <td>${busc.description}</td>
-                                <td>${busc.disp}</td>
+                                <td>${busc.cupo}</td>
                                 <td>${busc.cred_act}</td>
                                 <th>${busc.id_inter}</th>
                                 <td><button class="agregar_a btn btn-outline-info" data-toggle="modal" data-target="#editar">
@@ -47,11 +47,15 @@ jQuery(function () {
                 let busca = JSON.parse(response);
                 console.log(response);
                 let template = '';
+                if (busca == 0) {
+                    template += `<tr><td colspan="8"><h5 align="center">**** SIN ACTIVIDADES DISPONIBLES ****</h5></td></tr>`;
+                    $('#datos').html(template);
+                } else {
                 busca.forEach(busc => {
                     template += `<tr id_act="${busc.id_act}">
                         <td>${busc.name_act}</td>
                         <td>${busc.description}</td>
-                        <td>${busc.disp}</td>
+                        <td>${busc.cupo}</td>
                         <td>${busc.cred_act}</td>
                         <th>${busc.id_inter}</th>
                         <td><button class="agregar_a btn btn-outline-info" data-toggle="modal" data-target="#editar">
@@ -60,6 +64,7 @@ jQuery(function () {
                     </tr>`
                 });
                 $('#datos').html(template);
+            }
             }
         })
     }

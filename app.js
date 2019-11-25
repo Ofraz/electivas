@@ -116,7 +116,7 @@ jQuery(function(){
             email: $('#email').val()  
         };
         $.post('signup.php', postData, function (response){
-            
+            console.log(response)
             if(response == 'admin'){
                 alert("Administrador agregado.");
                 window.location= 'admin/home_admin.php';
