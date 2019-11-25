@@ -169,6 +169,8 @@
                                             <div class="form-group">
                                                 <input type="hidden" id="Id">
                                                 <input type="hidden" id="Id_name">
+                                                <input type="hidden" id="cup">
+                                                <input type="hidden" id="disp">
                                                 <label for="name_e">Nombre</label>
                                                 <input type="text" id="name_e" placeholder="Nombre" class="form-control" required>
                                                 <div id ="activ_resulte"></div>

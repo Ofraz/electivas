@@ -130,9 +130,9 @@
                         <div class="form-group">
                             <span style="color: red"><?php echo $error; ?></span>
                         </div>
-                        <input type="submit" id="sub" name="submit" value="Iniciar Sesión"
+                        <input type="submit" id="submit" name="submit" value="Iniciar Sesión"
                             class="btn btn-block btn-upiicsa">
-
+                        <div><a href="reset.php" style="float:left;margin-top:5px;">Recuperar contraseña</a></div>
                         <div><a href="signup.php" style="float:right;margin-top:5px;">Registrarse</a></div>
 
 

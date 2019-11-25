@@ -10,11 +10,9 @@ $('#name_a').keyup(function () {
         template= "<span style='font:bold;color:#ff3636;font-size:75%;'>El nombre no puede ser similar al usuario.</span>";
         $('#name_resulta').html(template);
         $('#save').attr('disabled', true);
-        $('#name_a').css({'border':'#ff3636'});
     }else{
         $('#name_resulta').html("");
         $('#save').attr('disabled', false);
-        $('#name_a').css({'border':'#e5e5e5'});
     }
 })
 
@@ -26,11 +24,9 @@ $('#name_e').keyup(function () {
         template= "<span style='font:bold;color:#ff3636;font-size:75%;'>El nombre no puede ser similar al usuario.</span>";
         $('#name_resulte').html(template);
         $('#save_e').attr('disabled', true);
-        $('#name_e').css({'border':'#ff3636'});
     }else{
         $('#name_resulte').html("");
         $('#save_e').attr('disabled', false);
-        $('#name_e').css({'border':'#e5e5e5'});
     }
 })
 
@@ -42,11 +38,9 @@ $('#name_e').keyup(function () {
             template= "<span style='font:bold;color:#ff3636;font-size:75%;'>Los apellidos no pueden ser iguales al nombre.</span>";
             $('#last_resulta').html(template);
             $('#save').attr('disabled', true);
-            $('#last_na').css({'border':'#ff3636'});
         }else{
             $('#last_resulta').html("");
             $('#save').attr('disabled', false);
-            $('#last_na').css({'border':'#e5e5e5'});
         }
     })
 
@@ -58,13 +52,35 @@ $('#name_e').keyup(function () {
             template= "<span style='font:bold;color:#ff3636;font-size:75%;'>Los apellidos no pueden ser iguales al nombre.</span>";
             $('#last_resulte').html(template);
             $('#save_e').attr('disabled', true);
-            $('#last_ne').css({'border':'#ff3636'});
         }else{
             $('#last_resulte').html("");
             $('#save_e').attr('disabled', false);
-            $('#last_ne').css({'border':'#e5e5e5'});
         }
     })
+
+    $(document).ready(function () {
+        //called when key is pressed in textbox
+        $("#user_a").keypress(function (e) {
+           //if the letter is not digit then display error and don't type anything
+           if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+              //display error message
+              $("#errmsg").html("Sólo numeros").show()
+                     return false;
+          }
+         });
+      });
+
+      $(document).ready(function () {
+        //called when key is pressed in textbox
+        $("#user_e").keypress(function (e) {
+           //if the letter is not digit then display error and don't type anything
+           if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+              //display error message
+              $("#errmsg").html("Sólo numeros").show()
+                     return false;
+          }
+         });
+      });
 
     //user disponible nvo
     $('#user_a').keyup(function () {
@@ -81,19 +97,16 @@ $('#name_e').keyup(function () {
                         template= "<span style='font:bold;color:#ff3636;font-size:75%;'>No disponible.</span>";
                         $('#user_resulta').html(template);
                         $('#save').attr('disabled', true);
-                        $('#user_a').css({'border':'#ff3636'});
                         //document.getElementById("user").required = false;
                     }
                     else if(response == "Disponible."){
                         template= "<span style='font:bold;color:#008000;font-size:75%;'>Disponible.</span>";
                         $('#user_resulta').html(template);
                         $('#save').attr('disabled', false);
-                        $('#user_a').css({'border':'#008000'});
                     }
                 }
             })
         }else{$('#user_resulta').html("");
-        $('#user_a').css({'border':'#e5e5e5'});
         $('#save').attr('disabled', false);}
     })
 

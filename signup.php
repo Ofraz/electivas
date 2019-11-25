@@ -85,8 +85,6 @@
             <form id="signup-form">
                 <div class="card-body">
                     <div class="card-block">
-                        <div class="row">
-                            <div class="col-xl-12 col-md-12 col-xl-6">
                                 <div class="form-group">
                                     <label for="tipo_usuario">Tipo de Usuario</label>
                                     <select class="form-control" id="tipo_usuario" name="tipo_usuario" required>
@@ -96,11 +94,12 @@
                                         <option value='in'>Docente</option>
                                     </select>
                                 </div>
-                                <!-- -->
+                                <div class="row">
+                        <div class="col-12 col-md-12 col-xl-6"><!-- -->
                                 <div class="form-group">
                                     <label for="user">Usuario (Boleta/Cve.Trabajador)</label>
-                                    <input type="text" id="user" placeholder="Usuario" class="form-control" milength="10" maxlength="10"
-                                    pattern="[A-Za-z0-9]+" title="Solo numeros y letras no acentuadas. Son 10 caracteres" required>
+                                    <input type="text" id="user" placeholder="Usuario" class="no-spin form-control" min="0" milength="10" maxlength="10"
+                                     title="Solo numeros. Son 10 caracteres" required>
                                     <div id ="user_result"></div>
                                 </div>
                                 <div class="form-group">
@@ -115,8 +114,8 @@
                                     title="Debe coincidir con la contraseña" required>
                                     <div id ="pass_result"></div>
                                 </div>
-
-                            
+</div>
+                                <div class="col-12 col-md-12 col-xl-6">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" id="name" placeholder="Nombre" class="form-control" minlength="3" maxlength="30"
@@ -129,6 +128,12 @@
                                     pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                     <div id ="last_result"></div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="name">Correo Electronico</label>
+                                    <input type="email" id="email" placeholder="Ingrese Correo" class="form-control" required>
+                                    <div id ="mail_result"></div>
+                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="card-footer">

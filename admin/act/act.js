@@ -98,10 +98,12 @@ jQuery(function () {
             $('#name_e').val(valor.name_act);
             $('#last_ne').val(valor.description);
             $('#cupo').val(valor.cupo);
+            $('#disp').val(valor.disp);
             $('#cred_e').val(valor.cred_act);
-            $('#intere_name').val(valor.id_inter); //investigar el motivo por el cuál no captura de forma correcta a veces
+            $('#intere_name').val(valor.id_inter);
             $('#Id').val(valor.id_act);
             $('#Id_name').val(valor.name_act);
+            $('#cup').val(valor.cupo);
         })
     })
 
@@ -113,7 +115,9 @@ jQuery(function () {
             cupo: $('#cupo').val(),
             cred: $('#cred_e').val(),
             id_inter: $('#intere_name').val(),
-            id: $('#Id').val()
+            id: $('#Id').val(),
+            back: $('#cup').val(),
+            disp: $('#disp').val()
         };
         console.log(postData);
         $.post('act_add2.php', postData, function (response) {

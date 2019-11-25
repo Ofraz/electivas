@@ -103,8 +103,8 @@
                                     <form method="post" id="alta_form">
                                         <div class="form-group">
                                             <label for="user_a">Clave T.</label>
-                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control" maxlength="10"
-                                            pattern="([a-zA-Z0-9\s]{10,})" title="Solo numeros y letras no acentuadas. Son 10 caracteres" required>
+                                            <input type="text" id="user_a" placeholder="Usuario" class="no-spin form-control" min="0" milength="10" maxlength="10"
+                                     title="Solo numeros. Son 10 caracteres" required>
                                             <div id ="inter_resulta"></div>
                                         </div>
                                         <div class="form-group">

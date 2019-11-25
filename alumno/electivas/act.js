@@ -22,7 +22,7 @@ jQuery(function () {
                             template += `<tr id_act="${busc.id_act}">
                                 <td>${busc.name_act}</td>
                                 <td>${busc.description}</td>
-                                <td>${busc.cupo}</td>
+                                <td>${busc.disp}</td>
                                 <td>${busc.cred_act}</td>
                                 <th>${busc.id_inter}</th>
                                 <td><button class="agregar_a btn btn-outline-info" data-toggle="modal" data-target="#editar">
@@ -51,7 +51,7 @@ jQuery(function () {
                     template += `<tr id_act="${busc.id_act}">
                         <td>${busc.name_act}</td>
                         <td>${busc.description}</td>
-                        <td>${busc.cupo}</td>
+                        <td>${busc.disp}</td>
                         <td>${busc.cred_act}</td>
                         <th>${busc.id_inter}</th>
                         <td><button class="agregar_a btn btn-outline-info" data-toggle="modal" data-target="#editar">

@@ -101,8 +101,8 @@
                                     <form method="post" id="alta_form">
                                         <div class="form-group">
                                             <label for="user_a">Boleta</label>
-                                            <input type="text" id="user_a" placeholder="Usuario" class="form-control" minlenght="10" maxlenght="10"
-                                            pattern="[0-9\s]" title="Solo se admiten numeros" required>
+                                            <input type="text" id="user_a" placeholder="Usuario" class="no-spin form-control" min="0" milength="10" maxlength="10"
+                                     title="Solo numeros. Son 10 caracteres" required>
                                             <div id ="user_resulta"></div> 
                                         </div>
                                         <div class="form-group">
@@ -148,8 +148,8 @@
                                         <input type="hidden" id="Id">
                                         <div class="form-group">
                                             <label for="user_e">Boleta</label>
-                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control"
-                                            pattern="[0-9\s]+" title="Solo se admiten números" required>
+                                            <input type="text" id="user_e" placeholder="Usuario" class="no-spin form-control" min="0" milength="10" maxlength="10"
+                                     title="Solo numeros. Son 10 caracteres" required>
                                             <div id ="user_resulte"></div>
                                         </div>
                                         <div class="form-group">

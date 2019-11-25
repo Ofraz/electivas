@@ -74,7 +74,7 @@
             <div class="col-xl-10 mx-auto ">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="wlc">Bienvenido <?php echo $row['name_a']; ?></h3>
+                        <h3 class="wlc"><?php echo $row['name_a']," ",$row['ap_a']; ?></h3>
                     </div>
                 </div>
             </div>
