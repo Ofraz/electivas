@@ -113,18 +113,19 @@ jQuery(function(){
             password: $('#password').val(),
             name: $('#name').val(),
             last_n: $('#last_n').val(),
-            mail: $('#email').val()  
+            email: $('#email').val()  
         };
         $.post('signup.php', postData, function (response){
-            if(response == 'ad'){
+            
+            if(response == 'admin'){
                 alert("Administrador agregado.");
                 window.location= 'admin/home_admin.php';
-            }
-            if(response == 'us'){
+            }else
+            if(response == 'alu'){
                 alert("Alumno agregado.");
                 window.location= 'alumno/home_u.php';
-            }
-            if(response == 'in'){
+            }else
+            if(response == 'inter'){
                 alert("Docente agregado.");
                 window.location= 'inter/home_i.php';
             }

@@ -8,14 +8,15 @@
         $password = $_POST['password'];
         $name = $_POST['name'];
         $last_n = $_POST['last_n'];
+        $email = $_POST['email'];
         
         switch ($tipo_usuario) {
-            case 'ad':
-                $query = "INSERT INTO admin (id_admin,password,name,ap) 
-                VALUES ('$user', '$password', '$name', '$last_n')
+            case 'admin':
+                $query = "INSERT INTO admin (id_admin,password,name,ap,mail) 
+                VALUES ('$user', '$password', '$name', '$last_n','$email')
                 ON DUPLICATE KEY
                 UPDATE name = '$name', 
-                ap = '$last_n', password = '$password'";
+                ap = '$last_n', password = '$password', mail = '$email'";
                 $result = mysqli_query($con,$query);
                 if(!$result){
                    die('error de consulta'.mysqli_error($con));
@@ -24,34 +25,35 @@
                 $alert = 'Administrador agregado';
                 echo $tipo_usuario;
             break;
-            case 'us':
-                    $query = "INSERT into alu (boleta,password,name_a,ap_a)
-                    VALUES ('$user', '$password', '$name', '$last_n')
-                    ON DUPLICATE KEY
-                    UPDATE name_a = '$name',
-                    ap_a = '$last_n', password = '$password'";
-                    $result = mysqli_query($con,$query);
-                    if(!$result){
-                        die('error de consulta'.mysqli_error($con));
-                    }
-                    $_SESSION["user_id"] = $user;
-                    $alert = 'Alumno agregado';
-                    echo $tipo_usuario;
+            case 'inter':
+                $query = "INSERT into inter (id_inter,password,name_inter,ap_inter,mail)
+                VALUES ('$user', '$password', '$name', '$last_n','$email')
+                ON DUPLICATE KEY
+                UPDATE name_inter = '$name', ap_inter = '$last_n', 
+                password = '$password', mail = '$email'";
+                $result = mysqli_query($con,$query);
+                if(!$result){
+                    die('error de consulta'.mysqli_error($con));
+                }
+                $_SESSION["user_id"] = $user;
+                $alert = 'Docente agregado';
+                echo $tipo_usuario;
+        break;
+            case 'alu':
+                $query = "INSERT INTO alu (boleta,password,name_a,ap_a,mail) 
+                VALUES ('$user', '$password', '$name', '$last_n','$email')
+                ON DUPLICATE KEY
+                UPDATE name_a = '$name', 
+                ap_a = '$last_n', password = '$password', mail = '$email'";
+                $result = mysqli_query($con,$query);
+                if(!$result){
+                   die('error de consulta'.mysqli_error($con));
+                }
+                $_SESSION["user_id"] = $user;
+                $alert = 'Administrador agregado';
+                echo $tipo_usuario;
             break;
-            case 'in':
-                    $query = "INSERT into inter (id_inter,password,name_inter,ap_inter)
-                    VALUES ('$user', '$password', '$name', '$last_n')
-                    ON DUPLICATE KEY
-                    UPDATE name_inter = '$name',
-                    ap_inter = '$last_n', password = '$password'";
-                    $result = mysqli_query($con,$query);
-                    if(!$result){
-                        die('error de consulta'.mysqli_error($con));
-                    }
-                    $_SESSION["user_id"] = $user;
-                    $alert = 'Docente agregado';
-                    echo $tipo_usuario;
-            break;
+            
         }
         exit();
 }   
@@ -89,9 +91,9 @@
                                     <label for="tipo_usuario">Tipo de Usuario</label>
                                     <select class="form-control" id="tipo_usuario" name="tipo_usuario" required>
                                         <option value=''>SELECCIONA TIPO DE USUARIO</option>
-                                        <option value='ad'>P. Electivas</option>
-                                        <option value='us'>Alumno</option>
-                                        <option value='in'>Docente</option>
+                                        <option value='admin'>P. Electivas</option>
+                                        <option value='inter'>Docente</option>
+                                        <option value='alu'>Alumno</option>
                                     </select>
                                 </div>
                                 <div class="row">
@@ -129,7 +131,7 @@
                                     <div id ="last_result"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name">Correo Electronico</label>
+                                    <label for="email">Correo Electronico</label>
                                     <input type="email" id="email" placeholder="Ingrese Correo" class="form-control" required>
                                     <div id ="mail_result"></div>
                                 </div>
