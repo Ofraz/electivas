@@ -5,7 +5,7 @@
     
     $consult = "SELECT id_admin FROM admin WHERE mail LIKE '$search'";
     $result = mysqli_query($con,$consult);
-    $row = mysqli_num_rows($result);
+    $row = mysqli_fetch_array($result);
     if ($row != 0){
         echo "No disponible.";
     }else{

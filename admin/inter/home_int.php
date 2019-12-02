@@ -14,6 +14,30 @@
     $query  = "SELECT * FROM admin WHERE id_admin = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
+    if ($row == 0){
+        $query  = "SELECT * FROM alu WHERE boleta = '$_SESSION[user_id]'";
+        $result = mysqli_query($con,$query);
+        $row = mysqli_fetch_array($result);
+        if ($row != 0){
+            ?>
+            <script type="text/javascript">
+                      window.location.href = '../../alumno/home_u.php';
+            </script>
+          <?php
+        }else{
+            $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
+            $result = mysqli_query($con,$query);
+            $row = mysqli_fetch_array($result);
+            if ($row != 0){
+                ?>
+          <script type="text/javascript">
+                    window.location.href = '../../inter/home_i.php';
+          </script>
+        <?php 
+            }
+        }
+       
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +46,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Administrador - actividades</title>
+    <title>Administrador - Intermediario</title>
     <link rel="icon" href="../../visual/upiicsa.bmp" type="image/bmp">
     <link rel="stylesheet" href="../../css/Style.css">
     <link rel="stylesheet" href="../../componentes/bootstrap/css/bootstrap.css">
@@ -99,33 +123,35 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
                                     <form method="post" id="alta_form">
-                                        <div class="form-group">
-                                            <label for="user_a">Clave T.</label>
-                                            <input type="text" id="user_a" placeholder="Usuario" class="no-spin form-control" min="0" milength="10" maxlength="10"
-                                     title="Solo numeros. Son 10 caracteres" required>
-                                            <div id ="inter_resulta"></div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="user_a">Clave T.</label>
+                                                <input type="text" id="user_a" placeholder="Usuario"
+                                                    class="no-spin form-control" minlength="8" maxlength="15" required>
+                                                <div id="inter_resulta"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name_a">Nombre</label>
+                                                <input type="text" id="name_a" placeholder="Nombre" class="form-control"
+                                                    pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+"
+                                                    title="No se admiten números ni caracteres especiales" required>
+                                                <div id="name_resulta"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="last_n">Apellidos</label>
+                                                <input type="text" id="last_na" placeholder="Apellidos"
+                                                    class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                                    title="No se admiten números ni caracteres especiales" required>
+                                                <div id="last_resulta"></div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="name_a">Nombre</label>
-                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control"
-                                            pattern="[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
-                                            <div id ="name_resulta"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="last_n">Apellidos</label>
-                                            <input type="text" id="last_na" placeholder="Apellidos" class="form-control"
-                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
-                                            <div id ="last_resulta"></div>
-                                        </div>
-                                    </div>
 
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Cerrar</button>
-                                        <button type="submit" id="save" class="save btn btn-primary">Crear</button>
-                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cerrar</button>
+                                            <button type="submit" id="save" class="save btn btn-primary">Crear</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -137,46 +163,50 @@
                             <div metod="POST" class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header bg-upiicsa">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">MODIFICAR DATOS DE INTERMEDIARIO </h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">MODIFICAR DATOS DE
+                                            INTERMEDIARIO </h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
                                     <form method="post" id="editar_form">
-                                        <input type="hidden" id="Id">
-                                        <div class="form-group">
-                                            <label for="user_e">Clave T.</label>
-                                            <input type="text" id="user_e" placeholder="Usuario" class="form-control" maxlength="10" 
-                                            pattern="([a-zA-Z0-9\s]{10,})" title="Solo numeros y letras no acentuadas. Son 10 caracteres" required>
-                                            <div id ="inter_resulte"></div>
+                                        <div class="modal-body">
+                                            <input type="hidden" id="Id">
+                                            <div class="form-group">
+                                                <label for="user_e">Clave T.</label>
+                                                <input type="text" id="user_e" placeholder="Usuario"
+                                                    class="no-spin form-control" minlength="8" maxlength="15" required>
+                                                <div id="inter_resulte"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name_e">Nombre</label>
+                                                <input type="text" id="name_e" placeholder="Nombre" class="form-control"
+                                                    pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                                    title="No se admiten números ni caracteres especiales" required>
+                                                <div id="name_resulte"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="last_ne">Apellidos</label>
+                                                <input type="text" id="last_ne" placeholder="Apellidos"
+                                                    class="form-control" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"
+                                                    title="No se admiten números ni caracteres especiales" required>
+                                                <div id="last_resulte"></div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="name_e">Nombre</label>
-                                            <input type="text" id="name_e" placeholder="Nombre" class="form-control"
-                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
-                                            <div id ="name_resulte"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="last_ne">Apellidos</label>
-                                            <input type="text" id="last_ne" placeholder="Apellidos" class="form-control"
-                                            pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
-                                            <div id ="last_resulte"></div>
-                                        </div>
-                                    </div>
 
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Cerrar</button>
-                                        <button type="submit" id="save_e" class="save_e btn btn-primary">Salvar
-                                            Cambios</button>
-                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cerrar</button>
+                                            <button type="submit" id="save_e" class="save_e btn btn-primary">Salvar
+                                                Cambios</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form p-2"><button class="btn btn-outline-primary" data-toggle="modal" data-target="#alta">Añadir
+                        <div class="form p-2"><button class="btn btn-outline-primary" data-toggle="modal"
+                                data-target="#alta">Añadir
                                 <span class="glyphicon glyphicon-plus" style="primary"></span>
                             </button> </div>
                         <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar">

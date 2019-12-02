@@ -15,6 +15,30 @@
     $query  = "SELECT * FROM alu WHERE boleta = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
+    if ($row == 0){
+        $query  = "SELECT * FROM admin WHERE id_admin = '$_SESSION[user_id]'";
+        $result = mysqli_query($con,$query);
+        $row = mysqli_fetch_array($result);
+        if ($row != 0){
+            ?>
+            <script type="text/javascript">
+                      window.location.href = '../admin/home_admin.php';
+            </script>
+          <?php
+        }else{
+            $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
+            $result = mysqli_query($con,$query);
+            $row = mysqli_fetch_array($result);
+            if ($row != 0){
+                ?>
+          <script type="text/javascript">
+                    window.location.href = '../inter/home_i.php';
+          </script>
+        <?php 
+            }
+        }
+       
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,14 +107,21 @@
             <div class="col-12 col-md-12 col-xl-10 mx-auto p-3">
                 <div class="card">
                     <div class="card-body">
-                    <input type="hidden" id="val_c" value ="<?php echo $row['boleta']; ?>">
-                    <input type="hidden" id="val_a" value ="<?php echo $row['cred']; ?>">
-                    <input type="hidden" id="val_b" value ="<?php echo $row['carrera']; ?>">
-                        <h4>Nombre: <?php echo $row['name_a']; ?></h4>
-                        <h4>Apellidos: <?php echo $row['ap_a']; ?></h4>
-                        <h4>Boleta: <?php echo $row['boleta']; ?></h4>
-                        <h4 >Creditos : <?php echo $row['cred']; ?></h4>
-                        <span id="carrera"></span>
+                        <input type="hidden" id="val_c" value="<?php echo $row['boleta']; ?>">
+                        <input type="hidden" id="val_a" value="<?php echo $row['cred']; ?>">
+                        <input type="hidden" id="val_b" value="<?php echo $row['carrera']; ?>">
+                        <div class="row">
+                            <div class="col">
+                                <h4>Nombre: <?php echo $row['name_a']; ?></h4>
+                                <h4>Apellidos: <?php echo $row['ap_a']; ?></h4>
+                                <h4>Boleta: <?php echo $row['boleta']; ?></h4>
+                                <h4>Creditos : <?php echo $row['cred']; ?></h4>
+                                <h4 id="c_carrera">Creditos a cubrir: <?php echo $row['carrera']; ?></h4>
+                            </div>
+                            <div id="carrera">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

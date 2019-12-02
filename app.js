@@ -11,19 +11,6 @@ jQuery(function(){
          }
      });
 
-     $(document).ready(function () {
-        //called when key is pressed in textbox
-        $("#user").keypress(function (e) {
-           //if the letter is not digit then display error and don't type anything
-           if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-              //display error message
-              $("#errmsg").html("Sólo numeros").show()
-                     return false;
-          }
-         });
-      });
-
-
     //validar name
     $('#name').keyup(function () {
         let search = $('#user').val();
@@ -56,7 +43,7 @@ jQuery(function(){
     $('#user').keyup(function () {
         let search = $('#user').val();
         console.log(search);
-        if (search != "") {
+        if (search != "" && this.value.length > 7) {
             $.ajax({
                 url: 'validar_dispUser.php',
                 type: 'POST',
@@ -79,10 +66,11 @@ jQuery(function(){
     })
 
     //Mail validation
-    $('#email').keyup(function () {
+    $('#email').keyup(function (e) {
         let search = $('#email').val();
+        var src = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         console.log(search);
-        if (search != "") {
+        if (search != "" && src.test(search) ) {
             $.ajax({
                 url: 'validar_dispMail.php',
                 type: 'POST',

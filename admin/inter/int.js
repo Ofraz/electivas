@@ -2,7 +2,7 @@ jQuery(function () {
     console.log('jquery funciona');
     fetchInter();
 
-    $(document).ready(function () {
+   /* $(document).ready(function () {
         //called when key is pressed in textbox
         $("#user_a").keypress(function (e) {
            //if the letter is not digit then display error and don't type anything
@@ -24,7 +24,7 @@ jQuery(function () {
                      return false;
           }
          });
-      });
+      });*/
 
 //validar nombre nvo
 $('#name_a').keyup(function () {
@@ -86,7 +86,7 @@ $('#name_e').keyup(function () {
     $('#user_a').keyup(function () {
         let search = $('#user_a').val();
         console.log(search);
-        if (search != "") {
+        if (search != "" && this.value.length > 7) {
             $.ajax({
                 url: 'validar_inter.php',
                 type: 'POST',
@@ -115,7 +115,7 @@ $('#name_e').keyup(function () {
         let search = $('#user_e').val();
         value = $('#Id').val();
         console.log(value);
-        if (search != "") {
+        if (search != "" && this.value.length > 7) {
             $.ajax({
                 url: 'validar_inter.php',
                 type: 'POST',

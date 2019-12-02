@@ -22,6 +22,7 @@ jQuery(function () {
                                 <td>${busc.name_act}</td>
                                 <td>${busc.description}</td>
                                 <td>${busc.cupo}</td>
+                                <td>${busc.disp}</td>
                                 <td>${busc.cred_act}</td>
                                 <td><button class="alu_list btn btn-outline-success" data-toggle="modal" data-target="#editar">
                                     <span class="glyphicon glyphicon-new-window" style="success"></span>
@@ -55,6 +56,7 @@ jQuery(function () {
                             <td>${busc.name_act}</td>
                             <td>${busc.description}</td>
                             <td>${busc.cupo}</td>
+                            <td>${busc.disp}</td>
                             <td>${busc.cred_act}</td>
                             <td><button class="alu_list btn btn-outline-success" data-toggle="modal" data-target="#editar">
                                 <span class="glyphicon glyphicon-new-window" style="success"></span>
@@ -108,6 +110,7 @@ jQuery(function () {
                     if (busca == 0) {
                         template += `<tr><td colspan="4"><h5 align="center">**** SIN ALUMNOS INSCRITOS ****</h5></td></tr>`;
                         $('#dato').html(template);
+                        $('#save').hide();
                     }
             });
             }
@@ -127,6 +130,7 @@ jQuery(function () {
             if (busca == 0) {
                 template += `<tr><td colspan="4"><h5 align="center">**** SIN ALUMNOS INSCRITOS ****</h5></td></tr>`;
                 $('#dato').html(template);
+                $('#save').hide();
             } else {
                 busca.forEach(busc => {
                     template += `<tr id_act="${busc.boleta}">

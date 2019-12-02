@@ -25,25 +25,23 @@
         <a href="index.php" class="navbar-brand">Electivas UPIICSA</a>
     </nav>
     <form id="signup-form">
-        <div class="col-md-4 mx-auto mt-5">
+        <div class="col-lg-4 col-md-8 mx-auto mt-5">
             <div class="card">
-                <div class="card-header ">
-                    <h5>Recuperar Contraeña</h5>
+                <div class="card-header bg-upiicsa">
+                    <h5>Recuperar Contraseña</h5>
+                </div>    
                 <div class="card-body">
-                    <div class="card-block">
-                                <div class="form-group">
-                                    <label for="name">Correo Electronico</label>
-                                    <input type="email" id="email" placeholder="Ingrese Correo" class="form-control" required>
-                                    <div id ="mail_result"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <input type="submit" id="submit" name="submit" value="Enviar" class="btn btn-outline-success btn-block">
-                        </div>
+                    <div class="form-group">
+                        <label for="name">Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="Ingrese Correo" class="form-control" required>
+                        <div id ="mail_result"></div>
                     </div>
-            </form>
-        </div>
+                    <input type="submit" id="submit" name="submit" value="Enviar" class="btn btn-rev-upiicsa btn-block"> 
+                </div>
+                <div class="card-footer">
+                    <center><a class="link" href="login.php" style="text-align:center;margin-bottom:15px;">Iniciar Sesion</a></center>
+                </div>
+            </div>
         </div>
     </form>
     <script src="componentes/jquery-3.4.1.min.js"></script>
@@ -53,8 +51,9 @@
      jQuery(function(){   
         $('#email').keyup(function () {
             let search = $('#email').val();
+            var src = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             console.log(search);
-            if (search != "") {
+            if (search != "" && src.test(search) ) {
                 $.ajax({
                     url: 'validar_dispMail.php',
                     type: 'POST',
@@ -79,9 +78,16 @@
         $('#signup-form').submit(function(e){
            email= $('#email').val(),
             console.log(email);
-            $.post('ResetForm.php', {email}, function (response){
-                alert(response);
-            })
+            $.post('token.php', {email}, function (response){
+                console.log(response);
+                $.post('datosMail.php', {email}, function (response){
+                    let busca = JSON.parse(response);
+                    console.log(response);
+                    $.post('resetForm.php', busca, function (response){
+                        alert(response); 
+                    })
+                })
+            })    
             e.preventDefault();
         })
      });

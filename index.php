@@ -74,7 +74,7 @@
 
     </div>
     <!--/.Mask-->
-    </header>
+    
     <!--Main layout-->
     <main class="mt-5">
         <div class="container">
@@ -132,8 +132,9 @@
 
                 </div>
                 <!--Grid row-->
-
             </section>
+        </div>
+    </main>
             <script src="componentes/jquery-3.4.1.min.js"></script>
             <script src="componentes/bootstrap/js/bootstrap.js"></script>
 

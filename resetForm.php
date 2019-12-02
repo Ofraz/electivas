@@ -5,26 +5,36 @@ require "mail/PHPMailer-master/src/SMTP.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$email= $_POST['email'];
-    
-    
-     
+$user = $_POST['id'];
+$email = $_POST['mail'];
+$name = $_POST['name'];
+$pass = $_POST['pass'];
+$token = $_POST['token'];
+$host= $_SERVER['SERVER_NAME'];
+
+$template = file_get_contents('recoverPass.php');
+$template = str_replace("{{name}}", $name, $template);
+$template = str_replace("{{action_url_2}}", '<b>http://'.$host.'/newPassword.php?key='.$token.'</b>', $template);
+$template = str_replace("{{action_url_1}}", 'http://'.$host.'/newPassword.php?key='.$token, $template);
+$template = str_replace("{{year}}", date('Y'), $template);
    
      
     $oMail= new PHPMailer();
+    $oMail->CharSet = "UTF-8";
     $oMail->isSMTP();
     $oMail->Host="smtp.gmail.com";
     $oMail->Port=587;
     $oMail->SMTPSecure="tls";
     $oMail->SMTPAuth=true;
+    //$oMail->SMTPDebug = 2; //Alternative to above constant
     $oMail->Username="electivasupiicsa@gmail.com";
     $oMail->Password="2011130598";
     $oMail->setFrom("electivasupiicsa@gmail.com","Electivas UPIICSA");
-    $oMail->addAddress("$email","RJC Moderador");
+    $oMail->addAddress("$email","Usuario");
     $oMail->Subject="Recuperacion de Contraseña";
-    $oMail->msgHTML("¡Hola! parece que haz olvidado tu contraseña, por el momento nos encontramos implementando un método más seguro para reestablecerla. Sé muy cuidadoso guardandola en un lugar seguro y borra inmediatamente este correo.Pass:");
+    $oMail->msgHTML($template);
     
     if(!$oMail->send()){
        echo $oMail->ErrorInfo;
-    }else{echo "correo enviado!";}
+    }else{echo "¡Correo enviado! Por favor revisa tu bandeja de entrada. En su defecto, la bandeja de SPAM";}
 ?>

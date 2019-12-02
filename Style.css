@@ -107,20 +107,12 @@ tr th:last-child {
 }
 
 
-.errorpasswd{
-    padding-top: 4%;
-}
 
-.erroremail , .errorpasswd{
-    position: absolute;
-    top: 0; left: 74%;
-    margin-top: 27.5%;
-    color: #ff3e3e;
-    margin-bottom: 17%;
-}
 
-.errorpasswd{
-    padding-top: 4%;
+/* Navigation Bar */
+.navbar-nav a {
+  color: #ffffff;
+  text-align: center;
 }
 
 

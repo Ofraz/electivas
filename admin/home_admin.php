@@ -14,6 +14,30 @@
     $query  = "SELECT * FROM admin WHERE id_admin = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
+    if ($row == 0){
+        $query  = "SELECT * FROM alu WHERE boleta = '$_SESSION[user_id]'";
+        $result = mysqli_query($con,$query);
+        $row = mysqli_fetch_array($result);
+        if ($row != 0){
+            ?>
+            <script type="text/javascript">
+                      window.location.href = '../alumno/home_u.php';
+            </script>
+          <?php
+        }else{
+            $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
+            $result = mysqli_query($con,$query);
+            $row = mysqli_fetch_array($result);
+            if ($row != 0){
+                ?>
+          <script type="text/javascript">
+                    window.location.href = '../inter/home_i.php';
+          </script>
+        <?php 
+            }
+        }
+       
+    }
 ?>
 <!DOCTYPE html>
 <html>

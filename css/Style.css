@@ -33,7 +33,6 @@ tr th:last-child {
 }
 
 
-
 .icon-bar {
 	width: 22px; 
 	height: 2px;
@@ -73,17 +72,20 @@ tr th:last-child {
   border: none;
   background: transparent !important;
 }
-.btn-upiicsa {
+.link { color: #264926; }
+.link:hover { color: #3a703a; }
+
+.btn-upiicsa, .btn-rev-upiicsa:hover, .btn-rev-upiicsa:focus, .btn-rev-upiicsa:active, .btn-rev-upiicsa.active, .open>.dropdown-toggle.btn-rev-upiicsa   {
     color: #ffffff;
     background-color: #448144;
 }
 
-.btn-rev-upiicsa{
+.btn-rev-upiicsa, .btn-upiicsa:hover, .btn-upiicsa:focus, .btn-upiicsa:active, .btn-upiicsa.active, .open>.dropdown-toggle.btn-upiicsa  {
   color: #448144;
   background-color: #ffffff;
 }
 
-.bg-upiicsa {
+.bg-upiicsa{
     color: #ffffff;
     background-color: #448144;
 }
@@ -91,31 +93,6 @@ tr th:last-child {
 .bg-upiicsa-lg {
     color: white;
     background-color: black;
-}
-
-.erroremail , .errorpasswd{
-    position: absolute;
-    top: 0; left: 74%;
-    margin-top: 27.5%;
-    color: #ff3e3e;
-    margin-bottom: 17%;
-}
-
-
-.errorpasswd{
-    padding-top: 4%;
-}
-
-.erroremail , .errorpasswd{
-    position: absolute;
-    top: 0; left: 74%;
-    margin-top: 27.5%;
-    color: #ff3e3e;
-    margin-bottom: 17%;
-}
-
-.errorpasswd{
-    padding-top: 4%;
 }
 
 .veryweak{
@@ -134,6 +111,18 @@ tr th:last-child {
 input:valid {
   border-color: green;
 }
+
+
+/* Navigation Bar */
+
+
+
+.navbar-nav a {
+  color: #ffffff;
+  text-align: center;
+  
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

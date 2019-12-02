@@ -74,11 +74,9 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-upiicsa">
         <a href="index.php" class="navbar-brand">Electivas UPIICSA</a>
     </nav>
-
     <div class="col-xl-6 col-md-8 mx-auto mt-4">
         <div class="card">
             <div class="card-header bg-upiicsa">
@@ -86,22 +84,21 @@
             </div>
             <form id="signup-form">
                 <div class="card-body">
-                    <div class="card-block">
-                                <div class="form-group">
-                                    <label for="tipo_usuario">Tipo de Usuario</label>
-                                    <select class="form-control" id="tipo_usuario" name="tipo_usuario" required>
-                                        <option value=''>SELECCIONA TIPO DE USUARIO</option>
-                                        <option value='admin'>P. Electivas</option>
-                                        <option value='inter'>Docente</option>
-                                        <option value='alu'>Alumno</option>
-                                    </select>
-                                </div>
-                                <div class="row">
+                    <div class="form-group">
+                        <label for="tipo_usuario">Tipo de Usuario</label>
+                        <select class="form-control" id="tipo_usuario" name="tipo_usuario" required>
+                            <option value=''>SELECCIONA TIPO DE USUARIO</option>
+                            <option value='admin'>P. Electivas</option>
+                            <option value='inter'>Docente</option>
+                            <option value='alu'>Alumno</option>
+                        </select>
+                    </div>
+                    <div class="row">
                         <div class="col-12 col-md-12 col-xl-6"><!-- -->
                                 <div class="form-group">
                                     <label for="user">Usuario (Boleta/Cve.Trabajador)</label>
-                                    <input type="text" id="user" placeholder="Usuario" class="no-spin form-control" min="0" milength="10" maxlength="10"
-                                     title="Solo numeros. Son 10 caracteres" required>
+                                    <input type="text" id="user" placeholder="Usuario" class="no-spin form-control" milength="8" maxlength="15"
+                                    required>
                                     <div id ="user_result"></div>
                                 </div>
                                 <div class="form-group">
@@ -116,8 +113,8 @@
                                     title="Debe coincidir con la contraseña" required>
                                     <div id ="pass_result"></div>
                                 </div>
-</div>
-                                <div class="col-12 col-md-12 col-xl-6">
+                        </div>
+                        <div class="col-12 col-md-12 col-xl-6">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" id="name" placeholder="Nombre" class="form-control" minlength="3" maxlength="30"
@@ -126,7 +123,7 @@
                                 </div>
                                 <div class="form-group" id="form_user">
                                     <label for="last_n">Apellidos</label>
-                                    <input type="text" id="last_n" placeholder="Apellidos" class="form-control" minlength="8" maxlength="40"
+                                    <input type="text" id="last_n" placeholder="Apellidos" class="form-control" minlength="3" maxlength="40"
                                     pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="No se admiten números ni caracteres especiales" required>
                                     <div id ="last_result"></div>
                                 </div>
@@ -135,14 +132,15 @@
                                     <input type="email" id="email" placeholder="Ingrese Correo" class="form-control" required>
                                     <div id ="mail_result"></div>
                                 </div>
-                                </form>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <input type="submit" id="submit" name="submit" value="Regístrate" class="btn btn-primary">
-                            <a href="login.php" style="float:right;margin-top:5px;">Ya tengo una cuenta</a>
-                        </div>
                     </div>
+                <div>    
+                <div class="card-footer">
+                    <input type="submit" id="submit" name="submit" value="      Regístrate      " class="btn btn-rev-upiicsa">
+                    <a class="link" href="login.php" style="float:right;margin-top:5px;">Ya tengo una cuenta</a>
+                </div>
+             </div>   
             </form>
         </div>
     </div>

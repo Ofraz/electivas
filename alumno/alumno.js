@@ -7,20 +7,22 @@ jQuery(function () {
           let vara = $('#val_a').val();
           let  cred = $('#val_b').val();
         if(cred == 0){
-            template = `<div class="form-inline"><select class="form-control col-md-5  mr-3" id="carrera_c" required>
+            template = `<div class="col-md-12"><select class="form-control mr-3" id="carrera_c" required>
                 <option value=''>SELECCIONA TU CARRERA</option>
                 <option value='20'>INGENIERIA INDUSTRIAL</option>
                 <option value='18'>ADMINISTRACION INDUSTRIAL</option>
                 <option value='20'>INGENIERIA EN TRANSPORTE</option>
                 <option value='14'>INGENIERIA EN INFORMATICA</option>
                 <option value='20'>CIENCIAS DE LA INFORMATICA</option>
-            </select>
-            <button  class="cred_c btn  btn-outline-primary">Enviar</button>`
+            </select><br>
+            <button  class="cred_c btn btn-block btn-outline-primary">Enviar</button></div>`
             $('#carrera').html(template);
         } else{
             if (vara >= cred){
-                template = `<h3 class="text-success text-center">EN HORA BUENA, ¡HAZ CUBIERTO TODOS TUS CRÉDITOS! </h3>
-                            <p class="text-center">¡¡Acude a la coordinación de electivas para saber qué sigue!!</p>`
+                template = `<div class="col-md-12" >
+                <p  class="text-success font-weight-bold text-center">EN HORA BUENA, ¡HAZ CUBIERTO TODOS TUS CRÉDITOS! </p>
+                            <p class="text-center">¡¡Acude a la coordinación de electivas para saber qué sigue!!</p>
+                </div>`
                             $('#carrera').html(template);
             }
         }     
@@ -36,6 +38,7 @@ jQuery(function () {
             alert('Datos actualizados!');
             $('#carrera').html("");
             $('#val_b').val(val);
+            $('#c_carrera').html(response);
         })
     }
 

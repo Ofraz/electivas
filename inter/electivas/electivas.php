@@ -13,6 +13,30 @@
     $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
+    if ($row == 0){
+        $query  = "SELECT * FROM alu WHERE boleta = '$_SESSION[user_id]'";
+        $result = mysqli_query($con,$query);
+        $row = mysqli_fetch_array($result);
+        if ($row != 0){
+            ?>
+            <script type="text/javascript">
+                      window.location.href = '../../alumno/home_u.php';
+            </script>
+          <?php
+        }else{
+            $query  = "SELECT * FROM admin  WHERE id_admin = '$_SESSION[user_id]'";
+            $result = mysqli_query($con,$query);
+            $row = mysqli_fetch_array($result);
+            if ($row != 0){
+                ?>
+          <script type="text/javascript">
+                    window.location.href = '../../admin/home_admin.php';
+          </script>
+        <?php 
+            }
+        }
+       
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,43 +96,47 @@
             <div class="col-xl-10 mx-auto ">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="wlc">Bienvenido <?php echo $row['name_inter']; ?></h3>
+                        <h3 class="wlc"><?php echo $row['name_inter']," ",$row['ap_inter']; ?></h3>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-12 col-xl-10 mx-auto p-3">
                 <div class="card">
-                <div class="card-header">
+                    <div class="card-header">
                         <H4>ELECTIVAS</H4>
                     </div>
                     <div class="card-body">
 
-                    <!-- Modal confirm delete-->
-                    <div class="modal fade" id="myModal3" role="dialog">
-                        <div class="modal-dialog">
-                        <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    
-                                    <h5 class="modal-title">¿Que deseas hacer?</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <!-- Modal confirm delete-->
+                        <div class="modal fade" id="myModal3" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+
+                                        <h5 class="modal-title">¿Que deseas hacer?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Para deslindarte de la actividad, presiona <strong style="background-color:yellow">Quitar.</strong></p>
-                                    <p>Para borrar definitivamente la actividad, presiona <strong style="background-color:red">Borrar.</strong></p>
-                                    <input type="hidden" id="id_supAct">
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Para deslindarte de la actividad, presiona <strong
+                                                style="background-color:yellow">Quitar.</strong></p>
+                                        <p>Para borrar definitivamente la actividad, presiona <strong
+                                                style="background-color:red">Borrar.</strong></p>
+                                        <input type="hidden" id="id_supAct">
 
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="quit_act" class="btn btn-outline-warning mr-auto"
+                                            data-dismiss="modal">Quitar</button>
+                                        <button type="button" id="del_act" class="btn btn-outline-danger"
+                                            data-dismiss="modal">Borrar</button>
+                                    </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" id="quit_act" class="btn btn-outline-warning mr-auto" data-dismiss="modal">Quitar</button>
-                                    <button type="button" id="del_act" class="btn btn-outline-danger" data-dismiss="modal">Borrar</button>
-                                </div>                        
                             </div>
                         </div>
-                    </div>
-                    <!-- End Modal -->
+                        <!-- End Modal -->
                         <!-- Modal Agregar -->
                         <div class="modal fade" id="alta" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -120,28 +148,32 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
                                     <form id="alta_form">
-                                        <div class="form-group">
-                                            <label for="name_a">Nombre actividad</label>
-                                            <input type="text" id="name_a" placeholder="Nombre" class="form-control" required>
-                                            <div id ="activ_resulta"></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="last_na">Descripción</label>
-                                            <textarea type="text"  minlenght="10" maxlenght="500" id="last_na" placeholder="Descripcion" rows="3"
-                                            class="form-control" title="Se tiene un máximo de 500 caracteres"required></textarea>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-xl-3 col-md-5 col-sm-5">
-                                                <label for="cupo_a">Cupo</label>
-                                                <input type="number" min="1" id="cupo_a" placeholder="Cupo" class="form-control" required>
+                                    <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="name_a">Nombre actividad</label>
+                                                <input type="text" id="name_a" placeholder="Nombre" class="form-control"
+                                                    required>
+                                                <div id="activ_resulta"></div>
                                             </div>
-                                            <div class="col-xl-3 col-md-5 col-sm-5">
-                                                <label for="last_na">Créditos</label>
-                                                <input type="number" min="1" max="5" id="cred_a" placeholder="Créditos" class="form-control" required>
+                                            <div class="form-group">
+                                                <label for="last_na">Descripción</label>
+                                                <textarea type="text" minlenght="10" maxlenght="500" id="last_na"
+                                                    placeholder="Descripcion" rows="3" class="form-control"
+                                                    title="Se tiene un máximo de 500 caracteres" required></textarea>
                                             </div>
-                                        </div>
+                                            <div class="form-group row">
+                                                <div class="col-xl-3 col-md-5 col-sm-5">
+                                                    <label for="cupo_a">Cupo</label>
+                                                    <input type="number" min="1" id="cupo_a" placeholder="Cupo"
+                                                        class="form-control" required>
+                                                </div>
+                                                <div class="col-xl-3 col-md-5 col-sm-5">
+                                                    <label for="last_na">Créditos</label>
+                                                    <input type="number" step="0.1" min="0.1" max="5.0" id="cred_a"
+                                                        placeholder="Créditos" class="form-control" required>
+                                                </div>
+                                            </div>
                                     </div>
 
                                     <div class="modal-footer">
@@ -150,8 +182,10 @@
                                         <button type="submit" id="save" class="btn btn-primary">Crear</button>
                                     </div>
                                     </form>
-                                </div><!--fin modal content -->
-                            </div><!--fin modal dialog -->
+                                </div>
+                                <!--fin modal content -->
+                            </div>
+                            <!--fin modal dialog -->
                         </div>
 
                         <!-- Modal Editar -->
@@ -165,44 +199,51 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                    <form method="post" id="editar_form">
                                     <div class="modal-body">
-                                        <form method="post" id="editar_form">
                                             <div class="form-group">
-                                                <input  type="hidden" id="Id">
-                                                <input  type="hidden" id="Id_name">
+                                                <input type="hidden" id="Id">
+                                                <input type="hidden" id="Id_name">
                                                 <input type="hidden" id="Disp">
                                                 <label for="name_e">Nombre</label>
-                                                <input type="text" id="name_e" placeholder="Nombre" class="form-control" required>
-                                                <div id ="activ_resulte"></div>
+                                                <input type="text" id="name_e" placeholder="Nombre" class="form-control"
+                                                    required>
+                                                <div id="activ_resulte"></div>
                                             </div>
                                             <label for="last_na">Descripcion</label>
-                                            <textarea type="text"  minlenght="10" maxlenght="500" id="last_ne" placeholder="Descripcion" rows="3"
-                                            class="form-control" title="Se tiene un máximo de 500 caracteres"required></textarea>                                            
+                                            <textarea type="text" minlenght="10" maxlenght="500" id="last_ne"
+                                                placeholder="Descripcion" rows="3" class="form-control"
+                                                title="Se tiene un máximo de 500 caracteres" required></textarea>
                                             <div class="form-group row">
-                                            <div class="col-xl-3 col-md-5 col-sm-5">
-                                                <label for="cupo_a">Cupo</label>
-                                                <input type="number" min="1" id="cupo" placeholder="Cupo" class="form-control" required>
+                                                <div class="col-xl-3 col-md-5 col-sm-5">
+                                                    <label for="cupo_a">Cupo</label>
+                                                    <input type="number" min="1" id="cupo" placeholder="Cupo"
+                                                        class="form-control" required>
+                                                </div>
+
+                                                <input type="hidden" id="available" placeholder="Cupo"
+                                                    class="form-control">
+
+                                                <div class="col-xl-3 col-md-5 col-sm-5">
+                                                    <label for="last_na">Créditos</label>
+                                                    <input type="number" step="0.1" min="0.1" max="5.0" id="cred_e"
+                                                        placeholder="Créditos" class="form-control" required>
+                                                </div>
                                             </div>
-                                            
-                                                <input type="hidden" id="available" placeholder="Cupo" class="form-control">
-                                            
-                                            <div class="col-xl-3 col-md-5 col-sm-5">
-                                                <label for="last_na">Créditos</label>
-                                                <input type="number" min="1"  max="5" id="cred_e" placeholder="Créditos" class="form-control" required>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Cerrar</button>
-                                        <button type="submit" id="save_e" class="save_e btn btn-primary">Salvar Cambios</button>
+                                        <button type="submit" id="save_e" class="save_e btn btn-primary">Salvar
+                                            Cambios</button>
                                     </div>
-                                </form>    
+                                    </form>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form p-2"><button class="btn btn-outline-primary" data-toggle="modal" data-target="#alta">Añadir
+                        <div class="form p-2"><button class="btn btn-outline-primary" data-toggle="modal"
+                                data-target="#alta">Añadir
                                 <span class="glyphicon glyphicon-plus" style="primary"></span>
                             </button> </div>
                         <input type="search" id="search" class="form-control mr-sm-2" placeholder="Buscar">

@@ -9,7 +9,9 @@ jQuery(function () {
             $.ajax({
                 url: 'actividades_search.php',
                 type: 'POST',
-                data: {search},
+                data: {
+                    search
+                },
                 success: function (response) {
                     console.log(response);
                     let busca = JSON.parse(response);

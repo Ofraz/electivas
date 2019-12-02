@@ -112,13 +112,13 @@
 
 ?>
     <form method="post">
-        <div class="col-md-4 mx-auto mt-5">
+        <div class="col-lg-4 col-md-8 mx-auto mt-5">
             <div class="card">
                 <div class="card-header bg-upiicsa">
                     <h5>Inicio de Sesión</h5>
                 </div>
                 <div class="card-body">
-                    <form id="login-form">
+                    
                         <div class="form-group">
                             <label>Usuario</label>
                             <input class="form-control" type="text" name="user" placeholder="Usuario" required>
@@ -131,14 +131,13 @@
                             <span style="color: red"><?php echo $error; ?></span>
                         </div>
                         <input type="submit" id="submit" name="submit" value="Iniciar Sesión"
-                            class="btn btn-block btn-upiicsa">
-                        <div><a href="reset.php" style="float:left;margin-top:5px;">Recuperar contraseña</a></div>
-                        <div><a href="signup.php" style="float:right;margin-top:5px;">Registrarse</a></div>
-
-
+                            class="btn btn-block btn-rev-upiicsa">
+                </div>
+                <div class="card-footer">
+                    <div><a class="link" href="reset.php" style="float:left;margin-top:5px;">Recuperar contraseña</a></div>
+                    <div><a class="link" href="signup.php" style="float:right;margin-top:5px;">Registrarse</a></div>
                 </div>
             </div>
-        </div>
         </div>
     </form>
     <script src="componentes/jquery-3.4.1.min.js"></script>

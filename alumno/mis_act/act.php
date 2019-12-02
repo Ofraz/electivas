@@ -13,6 +13,30 @@
     $query  = "SELECT * FROM alu WHERE Boleta = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
+    if ($row == 0){
+        $query  = "SELECT * FROM admin WHERE id_admin = '$_SESSION[user_id]'";
+        $result = mysqli_query($con,$query);
+        $row = mysqli_fetch_array($result);
+        if ($row != 0){
+            ?>
+            <script type="text/javascript">
+                      window.location.href = '../../admin/home_admin.php';
+            </script>
+          <?php
+        }else{
+            $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
+            $result = mysqli_query($con,$query);
+            $row = mysqli_fetch_array($result);
+            if ($row != 0){
+                ?>
+          <script type="text/javascript">
+                    window.location.href = '../../inter/home_i.php';
+          </script>
+        <?php 
+            }
+        }
+       
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +117,7 @@
                                         <th>Descripcion</th>
                                         <th>Creditos</th>
                                         <th>Responsable</th>
-                                        <th>inscribir</th>
+                                        <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="datos"></tbody>

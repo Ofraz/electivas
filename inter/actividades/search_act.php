@@ -6,7 +6,7 @@
 
     if(!empty($search)){
         $query = "SELECT activid.id_act, activid.name_act,activid.description,
-        activid.cupo, activid.cred_act, activid.id_inter 
+        activid.cupo, activid.disp, activid.cred_act, activid.id_inter 
         FROM activid 
         INNER JOIN inter ON activid.id_inter = inter.id_inter 
         WHERE activid.id_inter = '$_SESSION[user_id]' AND (
@@ -27,6 +27,7 @@
                 'name_act'=>$row['name_act'],
                 'description'=>$row['description'],
                 'cupo'=>$row['cupo'],
+                'disp'=>$row['disp'],
                 'cred_act'=>$row['cred_act']                                 
             );
         }

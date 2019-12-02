@@ -4,7 +4,7 @@
 
     $search = $_POST ['search'];
     if(!empty($search)){
-        $query= "SELECT activid.id_act, activid.name_act, activid.description, activid.cupo, activid.cred_act, 
+        $query= "SELECT activid.id_act, activid.name_act, activid.description, activid.cupo, activid.disp, activid.cred_act, 
         concat(inter.name_inter,' ',inter.ap_inter) AS intermed FROM activid
         JOIN inter ON activid.id_inter = inter.id_inter 
         WHERE activid.id_act NOT IN 
@@ -15,6 +15,7 @@
             OR activid.name_act LIKE '$search%'
             OR activid.description LIKE '$search%'
             OR activid.cupo LIKE '$search%'
+            OR activid.disp LIKE '$search%'
             OR activid.cred_act LIKE '$search%'
             OR concat(inter.name_inter, ' ',inter.ap_inter) LIKE '%$search%')
             AND activid.disp != '0'";
@@ -31,6 +32,7 @@
                 'name_act'=>$row['name_act'],
                 'description'=>$row['description'],
                 'cupo'=>$row['cupo'],
+                'disp'=>$row['disp'],
                 'cred_act'=>$row['cred_act'],
                 'id_inter' =>$row['intermed']                                 
             );

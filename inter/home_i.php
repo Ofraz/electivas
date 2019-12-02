@@ -13,9 +13,34 @@
     $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
+    if ($row == 0){
+        $query  = "SELECT * FROM alu WHERE boleta = '$_SESSION[user_id]'";
+        $result = mysqli_query($con,$query);
+        $row = mysqli_fetch_array($result);
+        if ($row != 0){
+            ?>
+            <script type="text/javascript">
+                      window.location.href = '../alumno/home_u.php';
+            </script>
+          <?php
+        }else{
+            $query  = "SELECT * FROM admin  WHERE id_admin = '$_SESSION[user_id]'";
+            $result = mysqli_query($con,$query);
+            $row = mysqli_fetch_array($result);
+            if ($row != 0){
+                ?>
+          <script type="text/javascript">
+                    window.location.href = '../admin/home_admin.php';
+          </script>
+        <?php 
+            }
+        }
+       
+    }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +52,10 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!--bootswatch litera -->
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-upiicsa sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-upiicsa sticky-top">
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01"
             aria-controls="#navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar top-bar"></span>
@@ -87,6 +113,7 @@
 
     <script src="../componentes/jquery-3.4.1.min.js"></script>
     <script src="../componentes/bootstrap/js/bootstrap.js"></script>
-    
+
 </body>
+
 </html>

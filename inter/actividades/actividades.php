@@ -13,6 +13,30 @@
     $query  = "SELECT * FROM inter WHERE id_inter = '$_SESSION[user_id]'";
     $result = mysqli_query($con,$query);
     $row = mysqli_fetch_array($result);
+    if ($row == 0){
+        $query  = "SELECT * FROM alu WHERE boleta = '$_SESSION[user_id]'";
+        $result = mysqli_query($con,$query);
+        $row = mysqli_fetch_array($result);
+        if ($row != 0){
+            ?>
+            <script type="text/javascript">
+                      window.location.href = '../../alumno/home_u.php';
+            </script>
+          <?php
+        }else{
+            $query  = "SELECT * FROM admin  WHERE id_admin = '$_SESSION[user_id]'";
+            $result = mysqli_query($con,$query);
+            $row = mysqli_fetch_array($result);
+            if ($row != 0){
+                ?>
+          <script type="text/javascript">
+                    window.location.href = '../../admin/home_admin.php';
+          </script>
+        <?php 
+            }
+        }
+       
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,7 +96,7 @@
             <div class="col-xl-10 mx-auto ">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="wlc">Bienvenido <?php echo $row['name_inter']; ?></h3>
+                        <h3 class="wlc"><?php echo $row['name_inter']," ",$row['ap_inter']; ?></h3>
                     </div>
                 </div>
             </div>
@@ -94,8 +118,8 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
                                     <form id="check_form">
+                                    <div class="modal-body">
                                         <input type="hidden" id="Id">
                                         <input type="hidden" id="Id_act">
                                         <input type="search" id="search2" class="form-control mr-sm-2" placeholder="Buscar">
@@ -129,8 +153,9 @@
                                         <th>Nombre</th>
                                         <th>Descripcion</th>
                                         <th>Cupo</th>
+                                        <th>Disp</th>
                                         <th>Creditos</th>
-                                        <th>Añadir</th>
+                                        <th>Asistencia</th>
                                     </tr>
                                 </thead>
                                 <tbody id="datos"></tbody>

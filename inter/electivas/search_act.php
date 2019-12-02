@@ -28,7 +28,7 @@
                 'name_act'=>$row['name_act'],
                 'description'=>$row['description'],
                 'cupo'=>$row['cupo'],
-                'cupo'=>$row['cupo'],
+                'disp'=>$row['disp'],
                 'cred_act'=>$row['cred_act']                                 
             );
         }

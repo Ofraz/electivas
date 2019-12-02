@@ -11,7 +11,7 @@
     if(!$result){
         die('Error de Consulta'.mysqli_error($con));
     }
-    echo "act";
+    echo "Creditos a cubrir: ", $var;
     }
 
     if(isset($_POST['vara'])) {
