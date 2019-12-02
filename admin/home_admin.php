@@ -65,11 +65,7 @@
         </button>
         <a class="navbar-brand" href="#">Electivas UPIICSA</a>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link"> </a>
-            </li>
-        </ul>
+        
 
 
 

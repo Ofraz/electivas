@@ -65,18 +65,14 @@
         </button>
         <a class="navbar-brand" href="../home_i.php">Electivas UPIICSA</a>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link"> </a>
-            </li>
-        </ul>
+        
 
 
 
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Electivas</a>
+                    <a class="nav-link selected" href="#">Electivas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../actividades/actividades.php">Asistencias</a>

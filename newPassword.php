@@ -58,7 +58,7 @@ if($_GET['key']){
         <div class="col-lg-4 col-md-8 mx-auto mt-5">
             <div class="card">
                 <div class="card-header bg-upiicsa">
-                    <center><h5>Restablecer Contraseña del usuario <text><?php echo $mail?></text></h5><center>
+                    <center><h5>Restablecer Contraseña del usuario <br><text><?php echo $mail?></text></h5><center>
                 </div>    
                 <div class="card-body">
                 <input type="hidden" id="email" value="<?php echo $mail?>">

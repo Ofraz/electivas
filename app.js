@@ -43,7 +43,7 @@ jQuery(function(){
     $('#user').keyup(function () {
         let search = $('#user').val();
         console.log(search);
-        if (search != "" && this.value.length > 7) {
+        if (search != "" && this.value.length > 9) {
             $.ajax({
                 url: 'validar_dispUser.php',
                 type: 'POST',

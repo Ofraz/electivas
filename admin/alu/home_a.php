@@ -65,11 +65,7 @@
         </button>
         <a class="navbar-brand" href="../home_admin.php">Electivas UPIICSA</a>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link"> </a>
-            </li>
-        </ul>
+        
 
 
 
@@ -79,7 +75,7 @@
                     <a class="nav-link" href="../act/actividades.php">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Alumnos</a>
+                    <a class="nav-link selected" href="#">Alumnos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../inter/home_int.php">Intermediarios</a>

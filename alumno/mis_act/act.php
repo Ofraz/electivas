@@ -64,11 +64,7 @@
         </button>
         <a class="navbar-brand" href="../home_u.php">Electivas UPIICSA</a>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link"> </a>
-            </li>
-        </ul>
+        
 
 
 
@@ -78,7 +74,7 @@
                     <a class="nav-link" href="../electivas/elec.php">Electivas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis Actividades</a>
+                    <a class="nav-link selected" href="#">Mis Actividades</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="../valiaciones/home_val.php">Validaciones</a>

@@ -65,11 +65,7 @@
         </button>
         <a class="navbar-brand" href="../home_admin.php">Electivas UPIICSA</a>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link"> </a>
-            </li>
-        </ul>
+        
 
 
 
@@ -82,7 +78,7 @@
                     <a class="nav-link" href="../alu/home_a.php">Alumnos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Intermediarios</a>
+                    <a class="nav-link selected" href="#">Intermediarios</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="../vali/home.php">Validaciones</a>
