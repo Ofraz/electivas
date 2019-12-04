@@ -95,9 +95,9 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-12 col-xl-6"><!-- -->
-                                <div class="form-group">
+                                <div class="form-group" id="usuario">
                                     <label for="user">Usuario (Boleta/Cve.Trabajador)</label>
-                                    <input type="text" id="user" placeholder="Usuario" class="form-control" minlength="10" maxlength="15"
+                                    <input type="text" id="user" placeholder="Usuario" class="form-control" 
                                     required>
                                     <div id ="user_result"></div>
                                 </div>

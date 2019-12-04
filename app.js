@@ -42,8 +42,11 @@ jQuery(function(){
     //user disponible
     $('#user').keyup(function () {
         let search = $('#user').val();
+        usuario = $('#tipo_usuario').val();
+        num = 0;
+        if (usuario =="alu"){num = 9} else{num = 6}
         console.log(search);
-        if (search != "" && this.value.length > 9) {
+        if (search != "" && this.value.length > num) {
             $.ajax({
                 url: 'validar_dispUser.php',
                 type: 'POST',
@@ -140,6 +143,25 @@ jQuery(function(){
                 $('#submit').attr('disabled', true);
             } 
         }else {$('#pass_result').html("");}
-         
+    })
+
+   
+
+    $('#tipo_usuario').change(function(){
+        tipo = $('#tipo_usuario').val();
+        if(tipo != "alu"){
+            field = document.getElementById('user');
+            field.value = field.value.substr(0,7);
+            field.minLength = 7;
+            field.maxLength = 7;
+            field.pattern = "\d*";
+            field.title = "Solo se admiten números";
+        }else{
+            field = document.getElementById('user');
+            field.maxLength = 10;
+            field.minLength = 10;
+            field.pattern = "[a-zA-Z0-9]*";
+            field.title = "Sólo se admiten números, puede incluir letras mayúsculas";
+        }
     })
 })
