@@ -154,7 +154,7 @@ jQuery(function(){
             field.value = field.value.substr(0,7);
             field.minLength = 7;
             field.maxLength = 7;
-            field.pattern = "\d*";
+            field.pattern = "[0-9]*";
             field.title = "Solo se admiten números";
         }else{
             field = document.getElementById('user');
