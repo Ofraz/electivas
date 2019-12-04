@@ -7,19 +7,22 @@ if($_GET['key']){
     $result = mysqli_query($con,$consult);
     $row = mysqli_fetch_array($result);
     if($row!=0){
-        $mail = $row['id_admin'];
+        $user = $row['id_admin'];
+        $mail = $row['mail'];
     }else{
         $consult = "SELECT token,mail,id_inter FROM inter WHERE token='$token'";
         $result = mysqli_query($con,$consult);
         $row = mysqli_fetch_array($result);
         if($row!=0){
-            $mail = $row['id_inter'];
+            $user = $row['id_inter'];
+            $mail = $row['mail'];
         }else{
             $consult = "SELECT token,mail,boleta FROM alu WHERE token='$token'";
             $result = mysqli_query($con,$consult);
             $row = mysqli_fetch_array($result);
             if($row!=0){
-                $mail = $row['boleta'];
+                $user = $row['boleta'];
+                $mail = $row['mail'];
             }else{
                 ?>
                     <h1>ENLACE NO VÁLIDO</h1>
@@ -58,7 +61,7 @@ if($_GET['key']){
         <div class="col-lg-4 col-md-8 mx-auto mt-5">
             <div class="card">
                 <div class="card-header bg-upiicsa">
-                    <center><h5>Restablecer Contraseña del usuario <br><text><?php echo $mail?></text></h5><center>
+                    <center><h5>Restablecer Contraseña del usuario <br><text><?php echo $user?></text></h5><center>
                 </div>    
                 <div class="card-body">
                 <input type="hidden" id="email" value="<?php echo $mail?>">
