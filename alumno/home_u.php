@@ -113,6 +113,10 @@
                                 <h4>Boleta: <?php echo $row['boleta']; ?></h4>
                                 <h4>Creditos : <?php echo $row['cred']; ?></h4>
                                 <h4 id="c_carrera">Creditos a cubrir: <?php echo $row['carrera']; ?></h4>
+                                <h4 id="c_carrera_res">Creditos faltantes: <?php 
+                                $resto = $row['carrera'] - $row ['cred'];
+                                if($resto <=0 ){$resto = 0;}
+                                echo $resto; ?></h4>
                             </div>
                             <div id="carrera">
 
