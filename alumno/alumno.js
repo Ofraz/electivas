@@ -2,28 +2,30 @@ jQuery(function () {
     console.log('jquery funciona');
     fetchUsers();
     fetchCarrera();
-
+  
+    $('#carrera').removeClass('col');
+   
     function fetchCarrera(){           
           let vara = $('#val_a').val();
           let  cred = $('#val_b').val();
         if(cred == 0){
             template = `<div class="col-md-12"><select class="form-control mr-3" id="carrera_c" required>
                 <option value=''>SELECCIONA TU CARRERA</option>
-                <option value='20'>INGENIERIA INDUSTRIAL</option>
-                <option value='18'>ADMINISTRACION INDUSTRIAL</option>
-                <option value='20'>INGENIERIA EN TRANSPORTE</option>
-                <option value='14'>INGENIERIA EN INFORMATICA</option>
-                <option value='20'>CIENCIAS DE LA INFORMATICA</option>
+                <option value='20.0'>INGENIERIA INDUSTRIAL</option>
+                <option value='18.0'>ADMINISTRACION INDUSTRIAL</option>
+                <option value='20.0'>INGENIERIA EN TRANSPORTE</option>
+                <option value='14.0'>INGENIERIA EN INFORMATICA</option>
+                <option value='20.0'>CIENCIAS DE LA INFORMATICA</option>
             </select><br>
             <button  class="cred_c btn btn-block btn-outline-primary">Enviar</button></div>`
             $('#carrera').html(template);
         } else{
             if (vara >= cred){
-                template = `<div class="col-md-12" >
+                template = `
                 <p  class="text-success font-weight-bold text-center">EN HORA BUENA, ¡HAZ CUBIERTO TODOS TUS CRÉDITOS! </p>
-                            <p class="text-center">¡¡Acude a la coordinación de electivas para saber qué sigue!!</p>
-                </div>`
-                            $('#carrera').html(template);
+                            <p class="text-center">¡¡Acude a la coordinación de electivas para saber qué sigue!!</p>`
+                $('#carrera').addClass('col-md-5');
+                $('#carrera').html(template);
             }
         }     
     }
@@ -39,6 +41,7 @@ jQuery(function () {
             $('#carrera').html("");
             $('#val_b').val(val);
             $('#c_carrera').html(response);
+            $('#c_carrera_res').html(response);
         })
     }
 
