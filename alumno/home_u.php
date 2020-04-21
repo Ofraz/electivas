@@ -115,10 +115,10 @@
                                 <h4 id="c_carrera">Creditos a cubrir: <?php echo $row['carrera']; ?></h4>
                                 <h4 id="c_carrera_res">Creditos faltantes: <?php 
                                 $resto = $row['carrera'] - $row ['cred'];
-                                if($resto <=0 ){$resto = 0;}
+                                if($resto <=0.0 ){$resto = "0.0";}
                                 echo $resto; ?></h4>
                             </div>
-                            <div id="carrera">
+                            <div class="col" id="carrera">
 
                             </div>
                         </div>
