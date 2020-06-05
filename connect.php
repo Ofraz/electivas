@@ -1,5 +1,5 @@
 <?php
-    $con  = mysqli_connect("localhost","root","admin","electivas");
+    $con  = mysqli_connect("localhost","rot","admin","electivas");
     if (!$con){
         die("Connection Failed : " . mysqli_connect_errno());
     }//else{ echo 'conexion exitosa';}

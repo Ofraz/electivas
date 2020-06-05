@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!--bootswatch litera -->
     <link rel="stylesheet" href="css/Style.css">
-
+    <link rel="stylesheet" href="componentes/darkmode/dark-mode.css">
 
 
 </head>
@@ -23,6 +23,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-upiicsa">
         <a href="index.php" class="navbar-brand">Electivas UPIICSA</a>
+        
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <div class="nav-link">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                        <label for="darkSwitch"><img src="visual/moon.png" width="24" height="24"></label>
+                    </div>
+                    <script src="componentes/darkmode/dark-mode-switch.js"></script>
+                </div>
+            </li>
+        </ul>
     </nav>
     <form id="signup-form">
         <div class="col-lg-4 col-md-8 mx-auto mt-5">

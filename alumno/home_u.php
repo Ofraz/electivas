@@ -52,6 +52,7 @@
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../componentes/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../componentes/darkmode/dark-mode.css">
     <!--bootswatch litera -->
 </head>
 
@@ -65,10 +66,6 @@
             <span class="icon-bar bottom-bar"></span>
         </button>
         <a class="navbar-brand" href="#">Electivas UPIICSA</a>
-
-        
-
-
 
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
@@ -87,6 +84,13 @@
             </ul>
         </div>
 
+        <div class="nav-link">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+            <label for="darkSwitch"><img src="../visual/moon.png" width="24" height="24"></label>
+          </div>
+          <script src="../componentes/darkmode/dark-mode-switch.js"></script>
+        </div>
     </nav>
 
 
@@ -115,10 +119,10 @@
                                 <h4 id="c_carrera">Creditos a cubrir: <?php echo $row['carrera']; ?></h4>
                                 <h4 id="c_carrera_res">Creditos faltantes: <?php 
                                 $resto = $row['carrera'] - $row ['cred'];
-                                if($resto <=0 ){$resto = 0;}
+                                if($resto <=0.0 ){$resto = "0.0";}
                                 echo $resto; ?></h4>
                             </div>
-                            <div id="carrera">
+                            <div class="col" id="carrera">
 
                             </div>
                         </div>

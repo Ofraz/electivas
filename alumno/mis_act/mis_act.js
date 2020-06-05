@@ -25,7 +25,7 @@ jQuery(function () {
                                 <td>${busc.name_act}</td>
                                 <td>${busc.description}</td>
                                 <td>${busc.cred_act}</td>
-                                <th>${busc.id_inter}</th>
+                                <td>${busc.id_inter}</td>
                                 <td><button class="delete_a btn btn-outline-danger" data-toggle="modal" data-target="#editar">
                                     <span class="glyphicon glyphicon-remove" style="danger"></span>
                                 </button></td>
@@ -57,7 +57,7 @@ jQuery(function () {
                             <td>${busc.name_act}</td>
                             <td>${busc.description}</td>
                             <td>${busc.cred_act}</td>
-                            <th>${busc.id_inter}</th>
+                            <td>${busc.id_inter}</td>
                             <td><button class="delete_a btn btn-outline-danger" data-toggle="modal" data-target="#editar">
                                 <span class="glyphicon glyphicon-remove" style="danger"></span>
                             </button></td>

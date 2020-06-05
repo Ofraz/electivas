@@ -22,14 +22,14 @@ $template = str_replace("{{year}}", date('Y'), $template);
     $oMail= new PHPMailer();
     $oMail->CharSet = "UTF-8";
     $oMail->isSMTP();
-    $oMail->Host="smtp.gmail.com";
+    $oMail->Host="smtp.mail.yahoo.com";
     $oMail->Port=587;
     $oMail->SMTPSecure="tls";
     $oMail->SMTPAuth=true;
     //$oMail->SMTPDebug = 2; //Alternative to above constant
-    $oMail->Username="electivasupiicsa@gmail.com";
-    $oMail->Password="2011130598";
-    $oMail->setFrom("electivasupiicsa@gmail.com","Electivas UPIICSA");
+    $oMail->Username="electivasupiicsa@yahoo.com";
+    $oMail->Password="vjcdmtibymerklyw";
+    $oMail->setFrom("electivasupiicsa@yahoo.com","Electivas UPIICSA");
     $oMail->addAddress("$email","Usuario");
     $oMail->Subject="Recuperacion de Contraseña";
     $oMail->msgHTML($template);

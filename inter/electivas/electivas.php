@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="../../componentes/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../../componentes/alertifyjs/css/alertify.css">
     <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../componentes/darkmode/dark-mode.css">
     <!--bootswatch litera -->
 </head>
 
@@ -65,10 +66,6 @@
         </button>
         <a class="navbar-brand" href="../home_i.php">Electivas UPIICSA</a>
 
-        
-
-
-
         <div class="navbar-collapse collapse " id="navbarColor01" style="">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -81,6 +78,14 @@
                     <a class="nav-link" href="../../logout.php">Cerrar Sesión</a>
                 </li>
             </ul>
+        </div>
+
+        <div class="nav-link">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+            <label for="darkSwitch"><img src="../../visual/moon.png" width="24" height="24"></label>
+          </div>
+          <script src="../../componentes/darkmode/dark-mode-switch.js"></script>
         </div>
 
     </nav>

@@ -143,6 +143,7 @@ jQuery(function () {
                     </tr>`
                 });
                 $('#dato').html(template);
+                $('#save').show();
             }
         })
     });

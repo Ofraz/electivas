@@ -1,0 +1,69 @@
+[data-theme="dark"] {
+  background-color: #333333 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #333 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #333333 !important;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #eee !important;
+}
+
+[data-theme="dark"] .btn-light {
+  background-color: #333333 !important;
+  color: #eee
+}
+
+[data-theme="dark"] .btn-upiicsa,
+[data-theme="dark"] .btn-rev-upiicsa:hover,
+[data-theme="dark"] .btn-rev-upiicsa:focus,
+[data-theme="dark"] .btn-rev-upiicsa:active,
+[data-theme="dark"] .btn-rev-upiicsa.active,
+.open>.dropdown-toggle.btn-rev-upiicsa {
+  color: #eee;
+  background-color: #448144;
+}
+
+[data-theme="dark"] .btn-rev-upiicsa,
+[data-theme="dark"] .btn-upiicsa:hover,
+[data-theme="dark"] .btn-upiicsa:focus,
+[data-theme="dark"] .btn-upiicsa:active,
+[data-theme="dark"] .btn-upiicsa.active,
+.open>.dropdown-toggle.btn-upiicsa {
+  color: #eee;
+  background-color: #333333;
+}
+
+[data-theme="dark"] .card-footer,
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-header,
+[data-theme="dark"] .modal-body,
+[data-theme="dark"] .modal-footer
+{
+  background-color: #333;
+}
+
+[data-theme="dark"] .link,
+[data-theme="dark"] .link:hover
+{
+  color: #eee;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] tbody td {
+  color: #eee;
+  background-color: #333333;
+  border-color: #eee;
+}
+
+[data-theme="dark"] thead th {
+  background-color: #448144;
+  border-color: #eee;
+  color: #eee;
+}
